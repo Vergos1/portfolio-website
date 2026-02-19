@@ -6,7 +6,7 @@ import splineReducer from './states/spline-slice';
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      fullpage: fullpageReducer,
+      fullPage: fullpageReducer,
       menu: menuReducer,
       spline: splineReducer,
     },

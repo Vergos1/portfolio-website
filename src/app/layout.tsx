@@ -5,7 +5,7 @@ import '@styles/_global.scss';
 import { gsap } from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
 import { StoreProvider, TransitionProvider } from '@components-providers';
-import { GoogleAnalytics } from '@features/analytics';
+import { GoogleAnalytics } from '@shared-lib';
 
 gsap.registerPlugin(CustomEase);
 

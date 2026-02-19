@@ -1,0 +1,20 @@
+import React, { useRef } from 'react';
+
+import { Bulge } from '@components-ui';
+import { HeroWrapper } from './hero-wrapper';
+import { AppHeaderWrapper } from '@components-layout';
+
+export const HeroSection = () => {
+  const sectionRef = useRef(null);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="section section__1 darkGradient first px-paddingX text-colorLight relative z-0"
+    >
+      <Bulge type="Light" />
+      <AppHeaderWrapper color="Light" />
+      <HeroWrapper />
+    </section>
+  );
+};

@@ -1,18 +1,16 @@
-"use client";
+'use client';
 
-import {
-  AboutSection,
-  ContactSection,
-  HeroSection,
-} from "@/components/layout/sections";
-import React, { Fragment } from "react";
+import { ContactsSection } from '@features/contacts-section';
+import { AboutSection } from '@features/about-section';
+import { HeroSection } from '@features/hero-section';
+import { Fragment } from 'react';
 
 export function AppMain() {
   return (
     <Fragment>
       <HeroSection />
       <AboutSection />
-      <ContactSection />
+      <ContactsSection />
     </Fragment>
   );
 }
