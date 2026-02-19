@@ -1,3 +1,4 @@
+'use client';
 import { links } from '@shared-config';
 import { useAppDispatch } from '@shared-hooks';
 import { cn } from '@shared-lib';

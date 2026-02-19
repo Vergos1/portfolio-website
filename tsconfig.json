@@ -59,7 +59,7 @@
       "@shared-types": ["shared/types/index.ts"],
       "@shared-types/*": ["shared/types/*"],
 
-      "@styles/*": ["styles/*"]
+      "@styles/*": ["assets/styles/*"]
     }
   },
   "include": [
