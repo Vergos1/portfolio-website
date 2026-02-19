@@ -1,4 +1,3 @@
-'use client';
 import { getRandomValues, shuffle } from '@shared-utils';
 import { createEase } from '@shared-lib';
 import { gsap } from 'gsap';
@@ -110,7 +109,7 @@ function getRandDistrubutedTop(index: number, targets: any[]) {
   return getRandomValues(30, 70);
 }
 
-export const BgImagesContainer = ({
+const BgImagesContainer = ({
   bgImagesSharedRef,
 }: {
   bgImagesSharedRef: { current: gsap.core.Tween | null };
@@ -181,3 +180,5 @@ export const BgImagesContainer = ({
     </div>
   );
 };
+
+export default BgImagesContainer;

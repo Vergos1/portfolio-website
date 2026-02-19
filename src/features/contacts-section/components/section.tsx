@@ -4,7 +4,9 @@ import { links } from '@shared-config';
 import { useAppSelector } from '@shared-hooks';
 import { useRef } from 'react';
 import { AppHeaderWrapper, AppFooter } from '@components-layout';
-import { BgImagesContainer } from './bg-images-container';
+import dynamic from 'next/dynamic';
+
+const BgImagesContainer = dynamic(() => import('./bg-images-container'));
 
 export const ContactsSection = () => {
   const { subscribe } = useAppSelector(state => state.fullPage.third);

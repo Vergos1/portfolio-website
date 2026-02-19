@@ -27,7 +27,7 @@ export const BgImage = ({ total, item, i }: BgImageProps) => {
         src={item.imgLink}
         fill={true}
         alt=""
-        className="h-full w-auto! max-w-none min-w-full object-cover"
+        className="w-auto! h-full min-w-full max-w-none object-cover"
       />
     </div>
   );
