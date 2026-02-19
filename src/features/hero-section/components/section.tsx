@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 import { Bulge } from '@components-ui';
 import { HeroWrapper } from './hero-wrapper';
 import { AppHeaderWrapper } from '@components-layout';
+import '@styles/index.css';
 
 export const HeroSection = () => {
   const sectionRef = useRef(null);

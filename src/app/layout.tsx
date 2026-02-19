@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 
-import '@styles/_global.scss';
+import '@styles/globals.css';
 import { gsap } from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
 import { StoreProvider, TransitionProvider } from '@components-providers';

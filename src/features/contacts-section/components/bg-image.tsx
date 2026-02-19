@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 
 type BgImageProps = {
@@ -26,7 +27,7 @@ export const BgImage = ({ total, item, i }: BgImageProps) => {
         src={item.imgLink}
         fill={true}
         alt=""
-        className="h-full !w-auto max-w-none min-w-full object-cover"
+        className="h-full w-auto! max-w-none min-w-full object-cover"
       />
     </div>
   );

@@ -1,3 +1,4 @@
+'use client';
 import { Bulge, Magentic } from '@components-ui';
 import { links } from '@shared-config';
 import { useAppSelector } from '@shared-hooks';

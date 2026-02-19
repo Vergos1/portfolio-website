@@ -3,7 +3,7 @@ import { links } from '@shared-config';
 import { useAppDispatch } from '@shared-hooks';
 import { cn } from '@shared-lib';
 import { toggleMenu } from '@shared-store/states';
-import '@styles/header.scss';
+import '@styles/header.css';
 import { gsap } from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
 import { useEffect, useRef } from 'react';

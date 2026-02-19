@@ -1,7 +1,7 @@
 import { AppHeader, AppMain } from '@components-layout';
 import { FullPageProvider } from '@components-providers';
 import { Cursor } from '@components-ui';
-import '@styles/_index.scss';
+import '@styles/index.css';
 
 export default async function HomePage() {
   return (

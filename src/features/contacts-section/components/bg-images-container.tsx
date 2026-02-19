@@ -1,3 +1,4 @@
+'use client';
 import { getRandomValues, shuffle } from '@shared-utils';
 import { createEase } from '@shared-lib';
 import { gsap } from 'gsap';
