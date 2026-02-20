@@ -139,16 +139,6 @@ export const FullPageProvider = ({
         '-=0.9',
       );
 
-    textAnimSection2Down.current = gsap.from('#my-text .line .innerLine', {
-      y: '200%',
-      opacity: 0,
-      skewX: -10,
-      paused: true,
-      delay: 0.25,
-      stagger: 0.12,
-      ease: CustomEase.create('custom', 'M0,0,C0.5,0,0,1,1,1'),
-    });
-    console.log(workHeading.current);
     workHeading.current = gsap.fromTo(
       '.work_heading',
       {

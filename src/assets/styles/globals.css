@@ -434,3 +434,7 @@ input:-webkit-autofill:active {
   text-align: left;
   white-space: nowrap;
 }
+
+img {
+  pointer-events: none;
+}

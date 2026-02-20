@@ -18,48 +18,50 @@
         "name": "next"
       }
     ],
-    "baseUrl": "src",
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["*"],
-      "@app/*": ["app/*"],
+      "@/*": ["src/*"],
+      "@app/*": ["src/app/*"],
 
-      "@features": ["features/index.ts"],
-      "@features/*": ["features/*"],
+      "@public/*": ["public/*"],
 
-      "@components/*": ["components/*"],
-      "@components-ui": ["components/ui/index.ts"],
-      "@components-ui/*": ["components/ui/*"],
-      "@components-layout": ["components/layout/index.ts"],
-      "@components-layout/*": ["components/layout/*"],
-      "@components-providers": ["components/providers/index.ts"],
-      "@components-providers/*": ["components/providers/*"],
+      "@features": ["src/features/index.ts"],
+      "@features/*": ["src/features/*"],
 
-      "@shared/*": ["shared/*"],
+      "@components/*": ["src/components/*"],
+      "@components-ui": ["src/components/ui/index.ts"],
+      "@components-ui/*": ["src/components/ui/*"],
+      "@components-layout": ["src/components/layout/index.ts"],
+      "@components-layout/*": ["src/components/layout/*"],
+      "@components-providers": ["src/components/providers/index.ts"],
+      "@components-providers/*": ["src/components/providers/*"],
 
-      "@shared-api/*": ["shared/api/*"],
+      "@shared/*": ["src/shared/*"],
 
-      "@shared-lib": ["shared/lib/index.ts"],
-      "@shared-lib/*": ["shared/lib/*"],
+      "@shared-api/*": ["src/shared/api/*"],
 
-      "@shared-constants": ["shared/constants/index.ts"],
-      "@shared-constants/*": ["shared/constants/*"],
+      "@shared-lib": ["src/shared/lib/index.ts"],
+      "@shared-lib/*": ["src/shared/lib/*"],
 
-      "@shared-utils": ["shared/utils/index.ts"],
-      "@shared-utils/*": ["shared/utils/*"],
+      "@shared-constants": ["src/shared/constants/index.ts"],
+      "@shared-constants/*": ["src/shared/constants/*"],
 
-      "@shared-hooks": ["shared/hooks/index.ts"],
-      "@shared-hooks/*": ["shared/hooks/*"],
+      "@shared-utils": ["src/shared/utils/index.ts"],
+      "@shared-utils/*": ["src/shared/utils/*"],
 
-      "@shared-store": ["shared/store/store.ts"],
-      "@shared-store/*": ["shared/store/*"],
+      "@shared-hooks": ["src/shared/hooks/index.ts"],
+      "@shared-hooks/*": ["src/shared/hooks/*"],
 
-      "@shared-config": ["shared/config/index.ts"],
-      "@shared-config/*": ["shared/config/*"],
+      "@shared-store": ["src/shared/store/store.ts"],
+      "@shared-store/*": ["src/shared/store/*"],
 
-      "@shared-types": ["shared/types/index.ts"],
-      "@shared-types/*": ["shared/types/*"],
+      "@shared-config": ["src/shared/config/index.ts"],
+      "@shared-config/*": ["src/shared/config/*"],
 
-      "@styles/*": ["assets/styles/*"]
+      "@shared-types": ["src/shared/types/index.ts"],
+      "@shared-types/*": ["src/shared/types/*"],
+
+      "@styles/*": ["src/assets/styles/*"]
     }
   },
   "include": [

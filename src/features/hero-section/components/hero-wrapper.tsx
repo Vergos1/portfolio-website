@@ -64,7 +64,7 @@ export const HeroWrapper = () => {
       <div className="flex max-w-full flex-col items-center justify-center text-center">
         <h1 className="font-syne hero-text-anim text-pretty text-[1rem] font-bold uppercase leading-none tracking-tight [word-spacing:1rem] sm:text-[5.2rem]">
           i am a
-          <div className="hero-image-anim pointer-events-none ml-4 mr-4 h-16 w-32 overflow-hidden rounded-full bg-top">
+          <div className="hero-image-anim ml-4 mr-4 h-16 w-32 overflow-hidden rounded-full bg-top">
             <Image
               src={HeroImagePc}
               alt="alt"
@@ -74,7 +74,7 @@ export const HeroWrapper = () => {
             />
           </div>
           software developer creating
-          <div className="hero-image-anim pointer-events-none ml-4 mr-4 h-16 w-32 overflow-hidden rounded-full">
+          <div className="hero-image-anim ml-4 mr-4 h-16 w-32 overflow-hidden rounded-full">
             <Image src={HeroImageCode.src} alt="alt" width={163} height={64} />
           </div>
           scalable <br /> & reliable solutions
