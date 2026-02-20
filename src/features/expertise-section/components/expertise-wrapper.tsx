@@ -1,9 +1,41 @@
+import {
+  TypographyH2,
+  TypographyH3,
+  TypographyDescription,
+} from '@components-ui';
 import { Magentic } from '@components-ui';
 import { links } from '@shared-config';
 import { isDesktop } from '@shared-utils';
 import { gsap } from 'gsap';
 import { useEffect, useState } from 'react';
 import 'swiper/css';
+
+const expertiseList = [
+  {
+    id: 1,
+    title: 'Architecture & Development',
+    description:
+      'Experience in designing and implementing architecture, developing large products from scratch. I take on the entire cycle — from requirements to release — and ensure stability, predictable delivery, and maintainable code.',
+  },
+  {
+    id: 2,
+    title: 'UI/UX Engineering',
+    description:
+      'I create user-friendly and adaptive interfaces that not only look modern but also solve business problems. I use best UI/UX practices to make the product intuitive and engaging.',
+  },
+  {
+    id: 3,
+    title: 'Performance & Optimization',
+    description:
+      'I optimise performance: SSR, code splitting, lazy loading, virtualisation. I improve Lighthouse scores, speed up loading times, and eliminate bottlenecks to ensure that the product runs quickly and stably.',
+  },
+  {
+    id: 4,
+    title: 'Collaboration & Growth',
+    description:
+      'I work closely with PM, designers, and QA, implement analytics (Sentry, Mixpanel, GA, Pixel), and support code reviews. I help the team grow through mentoring and quality standards so that the product develops confidently.',
+  },
+];
 
 export const ExpertiseWrapper = () => {
   const [text, setText] = useState({
@@ -20,28 +52,18 @@ export const ExpertiseWrapper = () => {
   }, []);
 
   return (
-    <main className="flex h-full w-full max-w-maxWidth grow flex-col justify-center text-[5.8vw] md:text-[clamp(20px,_1vw_+_14px,_32px)]">
-      <div className="anime relative flex h-[260px] w-full items-center justify-center md:h-[380px]">
-        <div className="flex flex-col items-center justify-center">
-          <div className="anime">
-            <h2 className="work_heading mask">{text.main}</h2>
-          </div>
-        </div>
-        <div className="section3__video overflow-hidden rounded-3xl bg-black md:rounded-[3rem]">
-          <video
-            className=""
-            id="video"
-            playsInline
-            autoPlay
-            muted
-            loop
-            src="/video/banner.mp4"
-          />
+    <div className="flex h-full w-full max-w-maxWidth grow flex-col justify-center text-[5.8vw] text-colorLight md:text-[clamp(20px,_1vw_+_14px,_32px)]">
+      <div className="flex flex-col gap-12">
+        <TypographyH2>Expertise</TypographyH2>
+        <div className="grid max-h-full grid-cols-1 grid-rows-1 gap-4 sm:grid-cols-2 sm:grid-rows-2 sm:gap-16">
+          {expertiseList.map(({ id, title, description }) => (
+            <div key={id}>
+              <TypographyH3>{title}</TypographyH3>
+              <TypographyDescription>{description}</TypographyDescription>
+            </div>
+          ))}
         </div>
       </div>
-
-      <div className="customBorder anime mx-auto my-[1.5em] h-[2px] w-[calc(100%_-_20px)] self-start rounded-full bg-colorSecondaryLight opacity-30"></div>
-
       <div className="anime relative flex flex-col gap-[1em] md:flex-row-reverse md:gap-[2em]">
         <Magentic
           href={links.work}
@@ -122,6 +144,6 @@ export const ExpertiseWrapper = () => {
           {text.para}
         </p>
       </div>
-    </main>
+    </div>
   );
 };

@@ -9,10 +9,10 @@ export const ExpertiseSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="section section__3 third lightGradient items-center justify-center px-paddingX pb-10 pt-paddingY text-colorDark"
+      className="section section__3 third darkGradient items-center justify-center px-paddingX pb-10 pt-paddingY text-colorDark"
     >
-      <Bulge type="Dark" />
-      <AppHeaderWrapper color="Dark" />
+      <Bulge type="Light" />
+      <AppHeaderWrapper color="Light" />
       <ExpertiseWrapper />
     </section>
   );
