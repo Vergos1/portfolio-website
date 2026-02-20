@@ -3,20 +3,19 @@
 import type { Item } from '@fullpage/react-fullpage';
 import ReactFullpage from '@fullpage/react-fullpage';
 import React, { useEffect, useRef } from 'react';
-
-import { animateRounded, animateText, createEase, ease } from '@shared-lib';
+import { CustomEase } from 'gsap/CustomEase';
+import { animateRounded, animateText } from '@shared-lib';
 import { gsap } from 'gsap';
-import SplitType from 'split-type';
 import { useAppDispatch } from '@shared-hooks';
 import { splineSceneVisibility, setActiveSlide } from '@shared-store/states';
 
 const opts = {
   autoScrolling: true,
   scrollOverflow: false,
-  scrollHorizontally: false,
-  navigation: false,
   navigationPosition: 'left',
   scrollingSpeed: 1300,
+  scrollHorizontally: false,
+  navigation: false,
   easingcss3: 'cubic-bezier(.70,0,.30,1)',
   anchors: ['first', 'second', 'third', 'fourth', 'fifth', 'sixth'],
   licenseKey: 'gplv3-license',
@@ -31,8 +30,9 @@ export const FullPageProvider = ({
   children: React.ReactNode;
 }>) => {
   const about = useRef<gsap.core.Timeline | null>(null);
-  const textAnim__section2__down = useRef<gsap.core.Tween | null>(null);
+  const textAnimSection2Down = useRef<gsap.core.Tween | null>(null);
   const videoElement = useRef<HTMLVideoElement | null>(null);
+  const workHeading = useRef<gsap.core.Tween | null>(null);
 
   const dispatch = useAppDispatch();
 
@@ -62,26 +62,12 @@ export const FullPageProvider = ({
 
     if (destination.anchor == 'second') {
       if (direction == 'down') {
-        textAnim__section2__down.current?.restart(true);
+        textAnimSection2Down.current?.restart(true);
       } else {
-        textAnim__section2__down.current?.restart();
+        textAnimSection2Down.current?.restart();
       }
       videoElement.current && (videoElement.current.currentTime = 1.6);
       videoElement.current?.play();
-    }
-
-    // if (destination.anchor == "third") {
-    //   videoElement.current && (videoElement.current.currentTime = 1.6);
-    //   videoElement.current?.play();
-    // }
-
-    if (destination.anchor == 'fourth') {
-      if (direction == 'down') {
-        // anim__section2__down.restart();
-      } else {
-        // textAnim__section2__up.restart();
-        // anim__section2__up.restart();
-      }
     }
 
     const dir = direction === 'down' ? 'down' : 'up';
@@ -90,11 +76,10 @@ export const FullPageProvider = ({
     animateText(selector, dir);
     animateRounded(selector, dir);
   };
-  const getRotation = (min: number, max: number) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  };
 
   useEffect(() => {
+    const ease = CustomEase.create('custom', 'M0,0 C0.52,0.01 0.16,1 1,1 ');
+
     about.current = gsap
       .timeline({ defaults: { ease: 'none' }, repeat: -1 })
       .fromTo(
@@ -154,29 +139,42 @@ export const FullPageProvider = ({
         '-=0.9',
       );
 
-    const myText = new SplitType('#my-text', { types: 'lines' });
-    const myText2 = new SplitType('#my-text .line', {
-      types: 'lines',
-      lineClass: 'innnerLine',
-    });
-
-    textAnim__section2__down.current = gsap.from('#my-text .line .innnerLine', {
+    textAnimSection2Down.current = gsap.from('#my-text .line .innerLine', {
       y: '200%',
       opacity: 0,
       skewX: -10,
-      // scaleY: 1.5,
-      duration: 1.5,
       paused: true,
       delay: 0.25,
       stagger: 0.12,
-      ease: createEase('M0,0,C0.5,0,0,1,1,1'),
+      ease: CustomEase.create('custom', 'M0,0,C0.5,0,0,1,1,1'),
     });
+
+    workHeading.current = gsap.fromTo(
+      '.work_heading',
+      {
+        rotate: 15,
+        // opacity: 0,
+        scaleY: 1.5,
+      },
+      {
+        // opacity: 0,
+        rotate: 0,
+        scaleY: 1,
+        opacity: 1,
+        delay: 0.7,
+        duration: 1.3,
+        // scaleY: 1.5,
+        // paused: true,
+        // delay: 0.25,
+        // stagger: 0.12,
+        ease: CustomEase.create('custom', 'M0,0,C0.5,0,0,1,1,1'),
+      },
+    );
 
     videoElement.current = document.querySelector('#video') as HTMLVideoElement;
 
     return () => {
       about.current?.kill();
-      // textAnim__section2__down.current?.kill();
     };
   }, []);
 

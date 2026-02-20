@@ -9,15 +9,15 @@ import { GoogleAnalytics } from '@shared-lib';
 
 gsap.registerPlugin(CustomEase);
 
-const satoshi = localFont({
-  src: '../assets/fonts/satoshi/Satoshi-Variable.woff2',
+// const satoshi = localFont({
+//   src: '../assets/fonts/satoshi/Satoshi-Variable.woff2',
+//   style: 'normal',
+// });
+
+const helvetica = localFont({
+  src: '../assets/fonts/helvetica/HelveticaNowDisplay-Medium.woff2',
   style: 'normal',
 });
-
-// const helvetica = localFont({
-//   src: "../assets/fonts/helvetica/HelveticaNowDisplay-Medium.woff2",
-//   style: "normal",
-// });
 
 export const metadata: Metadata = {
   title: 'Ihor Yanchuk • Frontend & Fullstack Developer',
@@ -64,7 +64,7 @@ export default function RootLayout({
         <GoogleAnalytics />
       </head>
 
-      <body className={satoshi.className}>
+      <body className={helvetica.className}>
         <StoreProvider>
           <TransitionProvider>{children}</TransitionProvider>
         </StoreProvider>

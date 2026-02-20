@@ -24,7 +24,7 @@ export const AppFooter = ({ className }: { className?: string }) => {
   return (
     <footer
       className={cn(
-        'footer__links px-paddingX absolute flex w-full flex-wrap gap-0 mix-blend-difference md:gap-12',
+        'footer__links absolute flex w-full flex-wrap gap-0 px-paddingX mix-blend-difference md:gap-12',
         className,
       )}
     >

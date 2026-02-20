@@ -4,47 +4,43 @@ import { gsap } from 'gsap';
 import { useLayoutEffect, useRef } from 'react';
 import SplitType from 'split-type';
 import { HeroButton } from './hero-button';
+import HeroImagePc from '../../../../public/image/hero-image-1.jpg';
+import HeroImageCode from '../../../../public/image/hero-image-2.png';
+import Image from 'next/image';
 
 export const HeroWrapper = () => {
-  const containerRef = useRef<HTMLElement>(null);
-  const subTextRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
-    if (!containerRef.current || !subTextRef.current) return;
-
+    const tl = gsap.timeline({ delay: 0.3 });
     gsap.set(containerRef.current, { autoAlpha: 1 });
+
+    if (!containerRef.current) return;
 
     const titleChars = new SplitType('.hero-text-anim', { types: 'chars' })
       .chars;
 
-    const subTextParagraph = subTextRef.current.querySelector('p');
-    if (!subTextParagraph) return;
-    const subTextWords = new SplitType(subTextParagraph, { types: 'words' })
-      .words;
-
-    const tl = gsap.timeline({ delay: 0.3 });
+    const imageElements =
+      containerRef.current.querySelectorAll<HTMLDivElement>('.hero-image-anim');
 
     tl.fromTo(
       titleChars,
       { y: 100, opacity: 0 },
-      { y: 0, opacity: 1, stagger: 0.04, duration: 1.4, ease: 'power4.out' },
+      { y: 0, opacity: 1, stagger: 0.04, duration: 0.4, ease: 'power4.out' },
     );
 
     tl.fromTo(
-      subTextRef.current,
-      { y: 40, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1.0, ease: 'power2.out' },
-      '<=0.8',
+      imageElements,
+      { scale: 0, opacity: 0 },
+      {
+        scale: 1,
+        opacity: 1,
+        stagger: 0.04,
+        duration: 0.2,
+        ease: 'power4.out',
+      },
     );
 
-    tl.fromTo(
-      subTextWords,
-      { y: 20, opacity: 0 },
-      { y: 0, opacity: 1, stagger: 0.1, duration: 0.8 },
-      '<+0.4',
-    );
-
-    // 4. Появление кнопки
     tl.fromTo(
       '.hero-button-anim',
       { scale: 0.8, opacity: 0 },
@@ -58,29 +54,34 @@ export const HeroWrapper = () => {
   }, []);
 
   return (
-    <main
+    <div
       ref={containerRef}
       style={{ visibility: 'hidden' }}
-      className="section1__wrapper max-w-maxWidth text-colorLight relative z-20 flex h-full w-full flex-col items-center justify-center"
+      className="section1__wrapper relative z-20 flex h-full w-full flex-col items-center justify-center text-colorLight"
     >
-      <div className="flex flex-col items-center justify-center text-center">
-        <h1 className="hero-text-anim text-[clamp(2.5rem,12vw,7rem)] leading-none font-extrabold tracking-tight uppercase">
-          Creative Developer
+      <div className="flex max-w-full flex-col items-center justify-center text-center">
+        <h1 className="hero-text-anim text-pretty text-[1rem] font-medium uppercase leading-none tracking-tight [word-spacing:1rem] sm:text-[5rem]">
+          i am a
+          <div className="hero-image-anim pointer-events-none ml-4 mr-4 h-16 w-32 overflow-hidden rounded-full bg-top">
+            <Image
+              src={HeroImagePc}
+              alt="alt"
+              className="-mt-10"
+              width={163}
+              height={64}
+            />
+          </div>
+          software developer creating
+          <div className="hero-image-anim pointer-events-none ml-4 mr-4 h-16 w-32 overflow-hidden rounded-full">
+            <Image src={HeroImageCode.src} alt="alt" width={163} height={64} />
+          </div>
+          scalable <br /> & reliable solutions
         </h1>
-
-        <div
-          ref={subTextRef}
-          className="mt-4 w-max rounded-lg bg-black/40 px-6 py-3 shadow-[0_0_40px_rgba(255,255,255,0.08)] backdrop-blur-md"
-        >
-          <p className="text-lg text-white">
-            Crafting digital experiences with code and passion.
-          </p>
-        </div>
       </div>
 
-      <div className="hero-button-anim absolute right-0 bottom-10 left-0 w-full">
+      {/* <div className="hero-button-anim absolute bottom-10 left-0 right-0 w-full">
         <HeroButton />
-      </div>
-    </main>
+      </div> */}
+    </div>
   );
 };

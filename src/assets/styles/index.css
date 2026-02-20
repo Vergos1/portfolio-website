@@ -495,14 +495,14 @@ textPath {
   overflow: hidden;
 }
 
-/* section__5 */
+/* section__4 */
 
-.section__5 .footer__left {
+.section__4 .footer__left {
   color: var(--colorDark);
   font-size: var(--fontExtraSmallest);
 }
 
-.section__5 .footer__heading {
+.section__4 .footer__heading {
   font-size: var(--fontSmall);
   white-space: nowrap;
   font-weight: bold;
@@ -521,13 +521,13 @@ textPath {
   backdrop-filter: blur(10px);
 }
 
-.section__5 .footer__img_wrapper {
+.section__4 .footer__img_wrapper {
   position: relative;
   /* bottom: 0; */
   z-index: -1;
 }
 
-.section__5 .footer__links {
+.section__4 .footer__links {
   min-height: 52.2px;
   /* min-width: calc(100% - (var(--padding))); */
   width: 100%;

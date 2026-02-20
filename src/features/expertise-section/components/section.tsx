@@ -1,19 +1,19 @@
 import { Bulge } from '@components-ui';
 import React, { useRef } from 'react';
 import { AppHeaderWrapper } from '@components-layout';
-import { AboutWrapper } from './about-wrapper';
+import { ExpertiseWrapper } from './expertise-wrapper';
 
-export const AboutSection = () => {
+export const ExpertiseSection = () => {
   const sectionRef = useRef(null);
 
   return (
     <section
       ref={sectionRef}
-      className="section section__2 second lightGradient items-center justify-center px-paddingX pb-10 pt-paddingY text-colorDark"
+      className="section section__3 third lightGradient items-center justify-center px-paddingX pb-10 pt-paddingY text-colorDark"
     >
       <Bulge type="Dark" />
       <AppHeaderWrapper color="Dark" />
-      <AboutWrapper />
+      <ExpertiseWrapper />
     </section>
   );
 };
