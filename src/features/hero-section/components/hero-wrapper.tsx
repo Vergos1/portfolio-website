@@ -17,8 +17,10 @@ export const HeroWrapper = () => {
 
     if (!containerRef.current) return;
 
-    const titleChars = new SplitType('.hero-text-anim', { types: 'chars' })
-      .chars;
+    const titleChars = new SplitType('.hero-text-anim', {
+      types: 'chars',
+      tagName: 'span',
+    }).chars;
 
     const imageElements =
       containerRef.current.querySelectorAll<HTMLDivElement>('.hero-image-anim');
@@ -60,7 +62,7 @@ export const HeroWrapper = () => {
       className="section1__wrapper relative z-20 flex h-full w-full flex-col items-center justify-center text-colorLight"
     >
       <div className="flex max-w-full flex-col items-center justify-center text-center">
-        <h1 className="hero-text-anim text-pretty text-[1rem] font-medium uppercase leading-none tracking-tight [word-spacing:1rem] sm:text-[5rem]">
+        <h1 className="font-syne hero-text-anim text-pretty text-[1rem] font-bold uppercase leading-none tracking-tight [word-spacing:1rem] sm:text-[5.2rem]">
           i am a
           <div className="hero-image-anim pointer-events-none ml-4 mr-4 h-16 w-32 overflow-hidden rounded-full bg-top">
             <Image

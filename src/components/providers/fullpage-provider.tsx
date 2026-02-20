@@ -148,7 +148,7 @@ export const FullPageProvider = ({
       stagger: 0.12,
       ease: CustomEase.create('custom', 'M0,0,C0.5,0,0,1,1,1'),
     });
-
+    console.log(workHeading.current);
     workHeading.current = gsap.fromTo(
       '.work_heading',
       {

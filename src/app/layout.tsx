@@ -6,17 +6,20 @@ import { gsap } from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
 import { StoreProvider, TransitionProvider } from '@components-providers';
 import { GoogleAnalytics } from '@shared-lib';
+import { Syne } from 'next/font/google';
 
 gsap.registerPlugin(CustomEase);
 
-// const satoshi = localFont({
-//   src: '../assets/fonts/satoshi/Satoshi-Variable.woff2',
-//   style: 'normal',
-// });
-
-const helvetica = localFont({
-  src: '../assets/fonts/helvetica/HelveticaNowDisplay-Medium.woff2',
+const satoshi = localFont({
+  src: '../assets/fonts/satoshi/Satoshi-Variable.woff2',
   style: 'normal',
+  variable: '--font-satoshi',
+});
+
+const syne = Syne({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-syne',
 });
 
 export const metadata: Metadata = {
@@ -64,7 +67,7 @@ export default function RootLayout({
         <GoogleAnalytics />
       </head>
 
-      <body className={helvetica.className}>
+      <body className={`${satoshi.variable} ${syne.variable}`}>
         <StoreProvider>
           <TransitionProvider>{children}</TransitionProvider>
         </StoreProvider>

@@ -18,6 +18,10 @@ const config: Config = {
       },
     },
     extend: {
+      fontFamily: {
+        satoshi: ['var(--font-satoshi)', 'sans-serif'],
+        syne: ['var(--font-syne)', 'sans-serif'],
+      },
       spacing: {
         paddingX: 'var(--paddingX)',
         paddingY: 'var(--paddingY)',

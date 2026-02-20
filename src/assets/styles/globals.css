@@ -6,6 +6,7 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+
     /* customs */
     --colorPrimary: #ffe600;
     --colorDark: #0e0d0c;
@@ -95,7 +96,7 @@
   }
   body {
     @apply lightGradient text-foreground;
-    font-family: 'DM Sans', sans-serif;
+    font-family: var(--font-satoshi), sans-serif;
   }
   .darkGradient {
     background: linear-gradient(90deg, #000000 0%, #222121 100%);
@@ -113,6 +114,15 @@
     color: var(--colorDark);
     background-color: var(--colorPrimary);
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-syne), sans-serif;
 }
 
 /* custom border remove on small height */
