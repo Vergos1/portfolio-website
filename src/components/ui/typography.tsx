@@ -12,9 +12,9 @@ type TypographyProps<T extends ElementType> = {
 } & ComponentPropsWithoutRef<T>;
 
 const variantStyles: Record<Variant, string> = {
-  h2: 'flex gap-2 pb-2 text-5xl font-semibold first:mt-0 md:text-7xl',
-  h3: 'pb-2 text-2xl font-medium first:mt-0 md:text-4xl',
-  body: 'pb-2 text-lg font-normal first:mt-0 md:text-2xl text-colorSecondaryLight',
+  h2: 'flex gap-2 text-3xl font-semibold first:mt-0 md:text-5xl',
+  h3: 'text-2xl font-medium first:mt-0 md:text-3xl',
+  body: 'text-normal font-normal first:mt-0 md:text-xl text-colorSecondaryLight',
 };
 
 export const Typography = <T extends ElementType = 'p'>({

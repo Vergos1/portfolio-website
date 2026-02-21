@@ -37,13 +37,13 @@ export const ExpertiseWrapper = () => {
         <Typography
           as="h2"
           variant="h2"
-          shape={<Image src={ShapeIcon} alt="Shape" width={60} />}
+          shape={<Image src={ShapeIcon} alt="Shape" width={40} />}
         >
           Expertise
         </Typography>
         <div className="grid max-h-full grid-cols-1 grid-rows-1 gap-4 sm:grid-cols-2 sm:grid-rows-2 sm:gap-16">
           {expertiseList.map(({ id, title, description }) => (
-            <Magentic key={id} className="flex flex-col">
+            <Magentic key={id} className="flex flex-col gap-1">
               <Typography as="h3" variant="h3">
                 {title}
               </Typography>
