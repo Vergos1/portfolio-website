@@ -37,7 +37,7 @@ export const ExpertiseWrapper = () => {
         <Typography
           as="h2"
           variant="h2"
-          shape={<Image src={ShapeIcon} alt="Shape" width={40} />}
+          shape={<Image src={ShapeIcon} alt="Shape" className="w-6 md:w-10" />}
         >
           Expertise
         </Typography>
