@@ -1,10 +1,5 @@
-import { Typography } from '@components-ui';
-import { Magentic } from '@components-ui';
-import { links } from '@shared-config';
-import { isDesktop } from '@shared-utils';
-import { gsap } from 'gsap';
+import { Typography, Magentic } from '@components-ui';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
 import ShapeIcon from '@public/svg/titles-shape.svg';
 import 'swiper/css';
 
@@ -36,19 +31,6 @@ const expertiseList = [
 ];
 
 export const ExpertiseWrapper = () => {
-  const [text, setText] = useState({
-    main: 'Featured Work',
-    para: `Building high-end, pixel-perfect websites for agencies and individuals while creating high quality rebuilds in my free time.`,
-  });
-  useEffect(() => {
-    if (!isDesktop()) {
-      setText({
-        main: 'Recent Work',
-        para: `Building high-end websites with agencies and individuals while creating rebuilds in my free time.`,
-      });
-    }
-  }, []);
-
   return (
     <div className="flex h-full w-full max-w-maxWidth grow flex-col justify-center text-[5.8vw] text-colorLight md:text-[clamp(20px,_1vw_+_14px,_32px)]">
       <div className="anime flex flex-col gap-12">

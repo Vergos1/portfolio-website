@@ -25,11 +25,15 @@ export const HeroWrapper = () => {
     const imageElements =
       containerRef.current.querySelectorAll<HTMLDivElement>('.hero-image-anim');
 
-    tl.fromTo(
-      titleChars,
-      { y: 100, opacity: 0 },
-      { y: 0, opacity: 1, stagger: 0.04, duration: 0.4, ease: 'power4.out' },
-    );
+    gsap.from(titleChars, {
+      opacity: 0,
+      scale: 0.5,
+      rotation: 15,
+      y: 30,
+      stagger: 0.08,
+      duration: 0.7,
+      ease: 'back.out(1.7)',
+    });
 
     tl.fromTo(
       imageElements,
@@ -38,7 +42,7 @@ export const HeroWrapper = () => {
         scale: 1,
         opacity: 1,
         stagger: 0.04,
-        duration: 0.2,
+        duration: 0.5,
         ease: 'power4.out',
       },
     );
@@ -62,7 +66,7 @@ export const HeroWrapper = () => {
       className="section1__wrapper relative z-20 flex h-full w-full flex-col items-center justify-center text-colorLight"
     >
       <div className="flex max-w-full flex-col items-center justify-center text-center">
-        <h1 className="font-syne hero-text-anim text-pretty text-[1rem] font-bold uppercase leading-none tracking-tight [word-spacing:1rem] sm:text-[5.2rem]">
+        <h1 className="text-outline-white hero-text-anim text-pretty text-[1rem] font-bold uppercase leading-none tracking-tight [word-spacing:1rem] sm:text-[5.2rem]">
           i am a
           <div className="hero-image-anim ml-4 mr-4 h-16 w-32 overflow-hidden rounded-full bg-top">
             <Image
