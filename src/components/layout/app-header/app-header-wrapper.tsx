@@ -23,15 +23,6 @@ export const AppHeaderWrapper = ({
   className,
   mode = 'hamburger',
 }: AppHeaderWrapperProps) => {
-  const possibleTailwindClasses = [
-    'bg-colorDark',
-    'bg-colorLight',
-    'text-colorDark',
-    'text-colorLight',
-    'before:bg-colorDark',
-    'before:bg-colorLight',
-  ];
-
   const logoAnimationTl = useRef<gsap.core.Timeline | null>(null);
 
   useEffect(() => {
