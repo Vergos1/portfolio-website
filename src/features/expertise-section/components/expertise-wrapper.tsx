@@ -37,6 +37,7 @@ export const ExpertiseWrapper = () => {
         <Typography
           as="h2"
           variant="h2"
+          className="flex gap-2"
           shape={<Image src={ShapeIcon} alt="Shape" className="w-6 md:w-10" />}
         >
           Expertise
@@ -47,7 +48,11 @@ export const ExpertiseWrapper = () => {
               <Typography as="h3" variant="h3">
                 {title}
               </Typography>
-              <Typography as="p" variant="body">
+              <Typography
+                as="p"
+                variant="body"
+                className="text-colorSecondaryLight"
+              >
                 {description}
               </Typography>
             </Magentic>

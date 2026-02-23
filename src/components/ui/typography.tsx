@@ -1,7 +1,7 @@
 import { cn } from '@shared-lib';
 import { ElementType, ReactNode, ComponentPropsWithoutRef } from 'react';
 
-type Variant = 'h2' | 'h3' | 'body';
+type Variant = 'h1' | 'h2' | 'h3' | 'body';
 
 type TypographyProps<T extends ElementType> = {
   as?: T;
@@ -12,9 +12,10 @@ type TypographyProps<T extends ElementType> = {
 } & ComponentPropsWithoutRef<T>;
 
 const variantStyles: Record<Variant, string> = {
-  h2: 'flex gap-2 text-2xl font-semibold first:mt-0 md:text-5xl',
+  h1: 'text-[1rem] font-bold uppercase tracking-tight [word-spacing:1rem] md:text-6xl',
+  h2: 'text-2xl font-semibold first:mt-0 md:text-5xl',
   h3: 'text-lg font-medium first:mt-0 md:text-3xl',
-  body: 'text-base font-normal first:mt-0 md:text-xl text-colorSecondaryLight',
+  body: 'text-base font-normal first:mt-0 md:text-xl',
 };
 
 export const Typography = <T extends ElementType = 'p'>({

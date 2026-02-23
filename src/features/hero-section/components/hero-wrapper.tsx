@@ -4,9 +4,9 @@ import { gsap } from 'gsap';
 import { useLayoutEffect, useRef } from 'react';
 import SplitType from 'split-type';
 import { HeroButton } from './hero-button';
-import HeroImagePc from '../../../../public/image/hero-image-1.jpg';
-import HeroImageCode from '../../../../public/image/hero-image-2.png';
+import HeroImage from '@public/image/hero-image.jpg';
 import Image from 'next/image';
+import { Magentic, Typography } from '@components-ui';
 
 export const HeroWrapper = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -66,28 +66,25 @@ export const HeroWrapper = () => {
       className="section1__wrapper relative z-20 flex h-full w-full flex-col items-center justify-center text-colorLight"
     >
       <div className="flex max-w-full flex-col items-center justify-center text-center">
-        <h1 className="text-outline-white hero-text-anim text-pretty text-[1rem] font-bold uppercase leading-none tracking-tight [word-spacing:1rem] sm:text-[5.2rem]">
-          i am a
-          <div className="hero-image-anim ml-4 mr-4 h-16 w-32 overflow-hidden rounded-full bg-top">
+        <span className="mb-4 flex items-center text-6xl font-light uppercase text-colorSecondaryLight">
+          Hey, I’m
+          <Magentic>
             <Image
-              src={HeroImagePc}
+              src={HeroImage}
               alt="alt"
-              className="-mt-10"
-              width={163}
-              height={64}
+              className="ml-4 mr-4 h-12 w-12 overflow-hidden rounded-full bg-center"
             />
-          </div>
-          software developer creating
-          <div className="hero-image-anim ml-4 mr-4 h-16 w-32 overflow-hidden rounded-full">
-            <Image src={HeroImageCode.src} alt="alt" width={163} height={64} />
-          </div>
-          scalable <br /> & reliable solutions
-        </h1>
+          </Magentic>
+          Igor
+        </span>
+        <Typography as="h1" variant="h1" className="hero-text-anim text-pretty">
+          I create interactive <br /> web & mobile solutions.
+        </Typography>
       </div>
 
-      {/* <div className="hero-button-anim absolute bottom-10 left-0 right-0 w-full">
+      <div className="hero-button-anim absolute bottom-10 left-0 right-0 w-full">
         <HeroButton />
-      </div> */}
+      </div>
     </div>
   );
 };
