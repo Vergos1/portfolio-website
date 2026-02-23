@@ -66,13 +66,13 @@ export const HeroWrapper = () => {
       className="section1__wrapper relative z-20 flex h-full w-full flex-col items-center justify-center text-colorLight"
     >
       <div className="flex max-w-full flex-col items-center justify-center text-center">
-        <span className="mb-4 flex items-center text-6xl font-light uppercase text-colorSecondaryLight">
+        <span className="mb-4 flex items-center text-2xl font-light uppercase text-colorSecondaryLight md:text-6xl">
           Hey, I’m
           <Magentic>
             <Image
               src={HeroImage}
               alt="alt"
-              className="ml-4 mr-4 h-12 w-12 overflow-hidden rounded-full bg-center"
+              className="ml-4 mr-4 h-10 w-10 overflow-hidden rounded-full bg-center md:h-12 md:w-12"
             />
           </Magentic>
           Igor

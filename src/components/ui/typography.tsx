@@ -12,7 +12,7 @@ type TypographyProps<T extends ElementType> = {
 } & ComponentPropsWithoutRef<T>;
 
 const variantStyles: Record<Variant, string> = {
-  h1: 'text-[1rem] font-bold uppercase tracking-tight [word-spacing:1rem] md:text-6xl',
+  h1: 'font-bold uppercase tracking-tight [word-spacing:1rem] text-2xl md:text-6xl',
   h2: 'text-2xl font-semibold first:mt-0 md:text-5xl',
   h3: 'text-lg font-medium first:mt-0 md:text-3xl',
   body: 'text-base font-normal first:mt-0 md:text-xl',
