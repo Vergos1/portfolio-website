@@ -43,7 +43,7 @@ export const HeroButton = () => {
     >
       <div className="shapka !flex items-center justify-center gap-[3.5rem]">
         <div className="round hidden items-center justify-center md:flex">
-          <p className="absolute left-[37%] text-[21px] whitespace-nowrap">
+          <p className="absolute left-[37%] whitespace-nowrap text-[21px]">
             <span>
               <span className="scrambleText">Check out</span>
               <br />
