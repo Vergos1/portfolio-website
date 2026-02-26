@@ -8,9 +8,6 @@
 
 .nav__container .nav__bar {
   width: 100%;
-}
-
-.nav__container .nav__bar {
   display: flex;
   align-items: center;
   justify-content: center;
