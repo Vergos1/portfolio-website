@@ -2,7 +2,7 @@ import { Typography, Magentic } from '@components-ui';
 import Image from 'next/image';
 import ShapeIcon from '@public/svg/titles-shape.svg';
 import 'swiper/css';
-import { Activity } from 'react';
+import { Activity, useState } from 'react';
 import { Plus } from 'lucide-react';
 
 const expertiseList = [
@@ -33,9 +33,15 @@ const expertiseList = [
 ];
 
 export const ExpertiseWrapper = () => {
+  const [openId, setOpenId] = useState<number | null>(0);
+
+  const toggleAccordion = (id: number) => {
+    setOpenId(prev => (prev === id ? null : id));
+  };
+
   return (
-    <div className="flex h-full w-full max-w-maxWidth grow flex-col justify-center text-[5.8vw] text-colorLight md:text-[clamp(20px,_1vw_+_14px,_32px)]">
-      <div className="anime grid grid-cols-1 gap-8 lg:grid-cols-7 lg:gap-28">
+    <div className="flex min-h-screen w-full max-w-maxWidth grow flex-col justify-center text-[5.8vw] text-colorLight md:text-[clamp(20px,_1vw_+_14px,_32px)]">
+      <div className="anime flex flex-col gap-4 lg:grid lg:grid-cols-7 lg:gap-28">
         <div className="col-span-4">
           <Typography
             as="h2"
@@ -64,23 +70,32 @@ export const ExpertiseWrapper = () => {
             brand and supports long-term growth.
           </Typography>
         </div>
-        <ol className="col-span-3 flex flex-col divide-y divide-border border-y border-border">
+        <ol className="scrollable col-span-3 flex max-h-[calc(94px*2.5)] flex-col border-border lg:max-h-none">
           {expertiseList.map(({ id, title, description }) => {
             return (
               <li
                 key={id}
-                className="flex items-center justify-between gap-6 px-5 py-12 first:rounded-t-2xl last:rounded-b-2xl md:px-5 md:py-12"
+                className="border-b border-border px-3 py-8 last:border-b-0 md:px-5 md:py-12"
               >
-                <Typography as="span" variant="h3" className="tracking-[0.1em]">
-                  0{id}
-                </Typography>
-                <div className="flex flex-1 items-center justify-between">
-                  <Typography as="h3" variant="h3">
-                    {title}
+                <button
+                  className="mb-4 flex w-full items-center justify-between gap-6"
+                  onClick={() => toggleAccordion(id)}
+                >
+                  <Typography
+                    as="span"
+                    variant="h3"
+                    className="tracking-[0.1em]"
+                  >
+                    0{id}
                   </Typography>
-                  <Plus />
-                </div>
-                <Activity mode="hidden">
+                  <div className="flex flex-1 items-center justify-between">
+                    <Typography as="h3" variant="h3">
+                      {title}
+                    </Typography>
+                    <Plus width={20} />
+                  </div>
+                </button>
+                <Activity mode={openId === id ? 'visible' : 'hidden'}>
                   <Typography
                     as="p"
                     variant="body"

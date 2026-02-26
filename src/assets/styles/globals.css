@@ -253,6 +253,10 @@ input:-webkit-autofill:active {
   outline: initial !important;
 }
 
+.scrollable {
+  overflow-y: auto;
+}
+
 .fp-watermark {
   display: none;
 }

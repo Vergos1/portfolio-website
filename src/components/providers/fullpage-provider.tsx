@@ -12,6 +12,7 @@ import { splineSceneVisibility, setActiveSlide } from '@shared-store/states';
 const opts: fullpageOptions = {
   autoScrolling: true,
   scrollOverflow: false,
+  normalScrollElements: '.scrollable',
   navigationPosition: 'left',
   scrollingSpeed: 1300,
   scrollHorizontally: false,
