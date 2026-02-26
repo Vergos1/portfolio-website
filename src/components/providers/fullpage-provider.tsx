@@ -1,6 +1,6 @@
 'use client';
 
-import type { Item } from '@fullpage/react-fullpage';
+import type { fullpageOptions, Item } from '@fullpage/react-fullpage';
 import ReactFullpage from '@fullpage/react-fullpage';
 import React, { useEffect, useRef } from 'react';
 import { CustomEase } from 'gsap/CustomEase';
@@ -9,7 +9,7 @@ import { gsap } from 'gsap';
 import { useAppDispatch } from '@shared-hooks';
 import { splineSceneVisibility, setActiveSlide } from '@shared-store/states';
 
-const opts = {
+const opts: fullpageOptions = {
   autoScrolling: true,
   scrollOverflow: false,
   navigationPosition: 'left',
