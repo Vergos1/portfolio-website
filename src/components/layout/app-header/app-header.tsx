@@ -16,12 +16,6 @@ export const AppHeader = () => {
   const router = useTransitionRouter();
   const pathname = usePathname();
   const { isMenuOpen, color } = useAppSelector(state => state.menu);
-  const possibleTailwindClasses = [
-    'text-colorDark',
-    'text-colorLight',
-    'lightGradient',
-    'darkGradient',
-  ];
 
   const ease = CustomEase.create('custom', 'M0,0 C0.52,0.01 0.16,1 1,1 ');
 
@@ -104,7 +98,7 @@ export const AppHeader = () => {
   return (
     <div
       id="headerNavigation"
-      className="p-paddingX fixed top-0 left-0 z-[6000] hidden h-full w-full -translate-y-full flex-col items-center justify-center"
+      className="fixed left-0 top-0 z-[6000] hidden h-full w-full -translate-y-full flex-col items-center justify-center p-paddingX"
     >
       <AppHeaderWrapper
         mode="cross"
@@ -128,7 +122,7 @@ export const AppHeader = () => {
         </ul>
       </nav>
 
-      <div className="absolute top-0 left-0 -z-40 flex h-full w-full flex-col">
+      <div className="absolute left-0 top-0 -z-40 flex h-full w-full flex-col">
         <div
           className={`${
             color == 'Light' ? 'lightGradient' : 'darkGradient'
