@@ -1,5 +1,4 @@
-import { Bulge } from '@components-ui';
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { AppHeaderWrapper } from '@components-layout';
 import { ExpertiseWrapper } from './expertise-wrapper';
 
@@ -11,7 +10,6 @@ export const ExpertiseSection = () => {
       ref={sectionRef}
       className="section section__3 third darkGradient items-center justify-center px-paddingX pb-10 pt-paddingY text-colorDark"
     >
-      <Bulge type="Light" />
       <AppHeaderWrapper color="Light" />
       <ExpertiseWrapper />
     </section>

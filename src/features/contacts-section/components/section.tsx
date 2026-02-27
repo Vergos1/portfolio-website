@@ -1,7 +1,6 @@
 'use client';
 import { Bulge, Magentic } from '@components-ui';
 import { links } from '@shared-config';
-import { useAppSelector } from '@shared-hooks';
 import { useRef } from 'react';
 import { AppHeaderWrapper, AppFooter } from '@components-layout';
 import dynamic from 'next/dynamic';
@@ -11,12 +10,11 @@ const BgImagesContainer = dynamic(() => import('./bg-images-container'), {
 });
 
 export const ContactsSection = () => {
-  const { subscribe } = useAppSelector(state => state.fullPage.third);
   const bgImagesSharedRef = useRef<gsap.core.Tween | null>(null);
 
   return (
     <section className="section section__4 fourth darkGradient relative">
-      <Bulge type="Light" />
+      {/* <Bulge type="Light" /> */}
       <AppHeaderWrapper color="Light" />
 
       <Magentic

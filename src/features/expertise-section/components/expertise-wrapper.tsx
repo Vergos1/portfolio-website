@@ -40,7 +40,7 @@ export const ExpertiseWrapper = () => {
   };
 
   return (
-    <div className="flex min-h-screen w-full max-w-maxWidth grow flex-col justify-center text-[5.8vw] text-colorLight md:text-[clamp(20px,_1vw_+_14px,_32px)]">
+    <div className="flex h-full w-full max-w-maxWidth grow flex-col justify-center text-[5.8vw] text-colorLight md:text-[clamp(20px,_1vw_+_14px,_32px)]">
       <div className="anime flex flex-col gap-4 lg:grid lg:grid-cols-7 lg:gap-28">
         <div className="col-span-4">
           <Typography
@@ -75,10 +75,10 @@ export const ExpertiseWrapper = () => {
             return (
               <li
                 key={id}
-                className="border-b border-border px-3 py-8 last:border-b-0 md:px-5 md:py-12"
+                className="border-b border-border px-3 py-8 last:border-b-0 md:px-4 md:py-8"
               >
                 <button
-                  className="mb-4 flex w-full items-center justify-between gap-6"
+                  className="flex w-full items-center justify-between gap-6"
                   onClick={() => toggleAccordion(id)}
                 >
                   <Typography
@@ -99,7 +99,7 @@ export const ExpertiseWrapper = () => {
                   <Typography
                     as="p"
                     variant="body"
-                    className="text-colorSecondaryLight"
+                    className="mt-4 text-colorSecondaryLight"
                   >
                     {description}
                   </Typography>
