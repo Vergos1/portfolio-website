@@ -25,21 +25,11 @@ export const AppHeaderWrapper = ({ className, mode = 'hamburger' }: AppHeaderWra
     logoAnimationTl.current = gsap
       .timeline({ paused: true })
       .fromTo(
-        '.logo__animation path',
-        { strokeDasharray: 500, strokeDashoffset: 500, opacity: 0 },
-        { strokeDashoffset: 0, opacity: 1, duration: 0.6, ease: 'power2.out' },
-      )
-      .fromTo(
         '.logo__animation',
-        { filter: 'blur(8px)', opacity: 0 },
-        { filter: 'blur(0px)', opacity: 1, duration: 0.6 },
+        { opacity: 0 },
+        { opacity: 1, duration: 0.6 },
         '-=1',
       )
-      .to(
-        '.dev-text',
-        { opacity: 0.3, duration: 0.6, repeat: 4, yoyo: true },
-        '-=0.5',
-      );
   }, { scope: headerRef });
 
   useEffect(() => {
