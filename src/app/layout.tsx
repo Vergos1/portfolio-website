@@ -68,11 +68,9 @@ export default function RootLayout({
       </head>
 
       <body className={`${satoshi.variable} ${syne.variable}`}>
-        <main>
           <StoreProvider>
             <TransitionProvider>{children}</TransitionProvider>
           </StoreProvider>
-        </main>
       </body>
     </html>
   );
