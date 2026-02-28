@@ -21,6 +21,7 @@ export const AppHeaderWrapper = ({
   className,
   mode = 'hamburger',
 }: AppHeaderWrapperProps) => {
+  const dispatch = useAppDispatch();
   const color = useAppSelector(state => state.fullPage.selectedBackground)
   const logoAnimationTl = useRef<gsap.core.Timeline | null>(null);
 
@@ -55,7 +56,6 @@ export const AppHeaderWrapper = ({
     };
   }, []);
 
-  const dispatch = useAppDispatch();
   return (
     <header className={cn('nav__container anime px-paddingX', className)}>
       <nav className="nav__bar">
