@@ -17,9 +17,6 @@
   width: 100%;
   padding-top: 30px;
   font-size: 1.8rem;
-}
-
-.nav__container .nav__bar>div {
   display: flex;
   gap: 5.2rem;
   list-style: none;
@@ -31,4 +28,9 @@
   .nav__container .nav__bar>div {
     padding-top: 25px;
   }
+}
+
+.nav__container .nav__item,
+.nav__container [class*="bg-[--header-color]"] {
+  transition: color 0.4s ease, background-color 0.4s ease;
 }

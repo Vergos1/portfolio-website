@@ -22,9 +22,6 @@ export const HeroWrapper = () => {
       tagName: 'span',
     }).chars;
 
-    const imageElements =
-      containerRef.current.querySelectorAll<HTMLDivElement>('.hero-image-anim');
-
     gsap.from(titleChars, {
       opacity: 0,
       scale: 0.5,
@@ -34,18 +31,6 @@ export const HeroWrapper = () => {
       duration: 0.7,
       ease: 'back.out(1.7)',
     });
-
-    tl.fromTo(
-      imageElements,
-      { scale: 0, opacity: 0 },
-      {
-        scale: 1,
-        opacity: 1,
-        stagger: 0.04,
-        duration: 0.5,
-        ease: 'power4.out',
-      },
-    );
 
     tl.fromTo(
       '.hero-button-anim',

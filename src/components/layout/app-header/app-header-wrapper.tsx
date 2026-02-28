@@ -6,7 +6,7 @@ import { toggleMenu } from '@shared-store/states';
 import '@styles/header.css';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Magentic } from '@components-ui';
 import { SvgLogo } from './svg-logo';
 
@@ -35,12 +35,6 @@ export const AppHeaderWrapper = ({ className, mode = 'hamburger' }: AppHeaderWra
         { filter: 'blur(0px)', opacity: 1, duration: 0.6 },
         '-=1',
       )
-      .fromTo(
-        '.letter',
-        { y: 10, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.3, stagger: 0.1, ease: 'bounce.out' },
-        '-=1',
-      )
       .to(
         '.dev-text',
         { opacity: 0.3, duration: 0.6, repeat: 4, yoyo: true },
@@ -48,15 +42,11 @@ export const AppHeaderWrapper = ({ className, mode = 'hamburger' }: AppHeaderWra
       );
   }, { scope: headerRef });
 
-  useGSAP(() => {
+  useEffect(() => {
+    if (!headerRef.current) return;
     const targetColor = color === 'Light' ? '#ffffff' : '#0e0d0c';
-
-    gsap.to(headerRef.current, {
-      '--header-color': targetColor,
-      duration: 0.3,
-      ease: 'power2.inOut',
-    });
-  }, { scope: headerRef, dependencies: [color] });
+    headerRef.current.style.setProperty('--header-color', targetColor);
+  }, [color]);
 
   return (
     <header ref={headerRef} className={cn('nav__container anime px-paddingX', className)}>
