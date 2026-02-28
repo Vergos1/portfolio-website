@@ -102,10 +102,6 @@
     background: linear-gradient(90deg, #000000 0%, #222121 100%);
   }
 
-  .fontsize-inherit {
-    font-size: inherit;
-  }
-
   body::-webkit-scrollbar {
     width: 0;
   }
@@ -116,9 +112,6 @@
   }
 }
 
-/* @layer utilities {
-} */
-
 h1,
 h2,
 h3,
@@ -126,13 +119,6 @@ h4,
 h5,
 h6 {
   font-family: var(--font-syne), sans-serif;
-}
-
-/* custom border remove on small height */
-@media screen and (max-height: 600px) {
-  .customBorder {
-    display: none;
-  }
 }
 
 @media screen and (min-height: 645px) {
@@ -149,6 +135,7 @@ input:-webkit-autofill:active {
   -webkit-text-fill-color: var(--colorLight);
   transition: background-color 5000s ease-in-out 0s;
 }
+
 .mask {
   --mask: linear-gradient(
     90deg,
@@ -158,21 +145,6 @@ input:-webkit-autofill:active {
 
   -webkit-mask-image: var(--mask);
   mask-image: var(--mask);
-}
-
-@media screen and (min-width: 645px) {
-  .sliderMask {
-    --mask: linear-gradient(
-      90deg,
-      hsla(0, 0%, 100%, 0.5) 0%,
-      hsl(0, 0%, 100%) 6%,
-      hsl(0, 0%, 100%) 85%,
-      hsla(0, 0%, 100%, 0.5) 100%
-    );
-
-    -webkit-mask-image: var(--mask);
-    mask-image: var(--mask);
-  }
 }
 
 .lightGradient {
@@ -234,23 +206,6 @@ input:-webkit-autofill:active {
   min-height: 100dvh !important;
   position: relative !important;
   isolation: isolate !important;
-}
-
-.fp-overflow {
-  height: 100% !important;
-  width: 100% !important;
-
-  max-height: 100% !important;
-  max-width: 100% !important;
-  /* position: relative; */
-  overflow: hidden;
-  overflow-y: hidden !important;
-  display: flex !important;
-  flex-direction: column;
-  align-items: center !important;
-  justify-content: center !important;
-  isolation: isolate;
-  outline: initial !important;
 }
 
 .scrollable {
