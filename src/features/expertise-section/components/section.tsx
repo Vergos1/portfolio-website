@@ -1,6 +1,5 @@
 import { Bulge } from '@components-ui';
-import React, { useRef } from 'react';
-import { AppHeaderWrapper } from '@components-layout';
+import { useRef } from 'react';
 import { ExpertiseWrapper } from './expertise-wrapper';
 
 export const ExpertiseSection = () => {
