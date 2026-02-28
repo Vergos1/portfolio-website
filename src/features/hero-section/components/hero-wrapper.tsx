@@ -147,7 +147,7 @@ export const HeroWrapper = () => {
           I build fast, clean, and memorable digital experiences — from pixel-perfect interfaces to scalable fullstack solutions.
         </h2>
 
-        <Button className="md:mt-16 mt-10" params="View all Work" href="#" invertTarget=".section__1">
+        <Button textColor='colorDark' className="md:mt-16 mt-10 bg-colorLight" params="View all Work" href="#" >
           View all Work
         </Button>
       </div>

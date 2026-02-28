@@ -35,3 +35,7 @@
 .nav__container [class*="bg-[--header-color]"] {
   transition: color 0.4s ease, background-color 0.4s ease;
 }
+
+body.inverted .nav__container {
+  --header-color: #0e0d0c;
+}

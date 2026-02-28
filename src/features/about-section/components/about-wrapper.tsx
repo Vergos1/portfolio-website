@@ -32,7 +32,7 @@ export const AboutWrapper = () => {
             businesses. These principles guide how I structure collaborations
             and ship work for clients and agencies.
           </p>
-          <Button params="View all Work" href={links.work} invertTarget=".section__2">
+          <Button params="View all Work" href={links.work} className='bg-colorDark' textColor='colorLight' >
             View all Work
           </Button>
         </div>

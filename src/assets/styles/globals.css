@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -355,17 +356,4 @@
 
 .darkGradient {
   background: linear-gradient(90deg, #000000 0%, #222121 100%);
-}
-
-.section__1,
-.section__2,
-.section__3,
-.section__4 {
-  --colorLight: #ffffff;
-  --colorDark: #0e0d0c;
-  --colorSecondaryDark: #404040;
-  --colorSecondaryLight: #bfbfbf;
-  --colorSecondaryHalfLight: #f2f2f2;
-  --colorSecondaryHalfDark: #1a1a1a;
-  --colorWhite: #fff;
 }
