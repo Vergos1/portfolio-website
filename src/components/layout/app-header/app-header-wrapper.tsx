@@ -53,7 +53,7 @@ export const AppHeaderWrapper = ({ className, mode = 'hamburger' }: AppHeaderWra
 
     gsap.to(headerRef.current, {
       '--header-color': targetColor,
-      duration: 0.6,
+      duration: 0.3,
       ease: 'power2.inOut',
     });
   }, { scope: headerRef, dependencies: [color] });
