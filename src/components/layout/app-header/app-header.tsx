@@ -15,7 +15,8 @@ export const AppHeader = () => {
   const dispatch = useAppDispatch();
   const router = useTransitionRouter();
   const pathname = usePathname();
-  const { isMenuOpen, color } = useAppSelector(state => state.menu);
+  const { isMenuOpen } = useAppSelector(state => state.menu);
+  const color = useAppSelector(state => state.fullPage.selectedBackground)
 
   const ease = CustomEase.create('custom', 'M0,0 C0.52,0.01 0.16,1 1,1 ');
 
@@ -103,16 +104,14 @@ export const AppHeader = () => {
       <AppHeaderWrapper
         mode="cross"
         className="headerAnimate"
-        color={color == 'Light' ? 'Dark' : 'Light'}
       />
       <nav>
         <ul className="mask flex flex-col items-center justify-center px-8 py-[10vh]">
           {headerData.map(data => (
             <li className="headerAnimate" key={data.name}>
               <button
-                className={`text-[clamp(32px,_3.3vw_+_32px,_88px)] font-bold text-color${
-                  color == 'Light' ? 'Dark' : 'Light'
-                }`}
+                className={`text-[clamp(32px,_3.3vw_+_32px,_88px)] font-bold text-color${color == 'Light' ? 'Dark' : 'Light'
+                  }`}
                 onClick={() => handleNavClick(data.href)}
               >
                 <span className="scrambleText">{data.name}</span>
@@ -124,15 +123,13 @@ export const AppHeader = () => {
 
       <div className="absolute left-0 top-0 -z-40 flex h-full w-full flex-col">
         <div
-          className={`${
-            color == 'Light' ? 'lightGradient' : 'darkGradient'
-          } h-full w-full grow`}
+          className={`${color == 'Light' ? 'lightGradient' : 'darkGradient'
+            } h-full w-full grow`}
         ></div>
         <div className="rounded__div__up !relative z-50">
           <div
-            className={`round__bg__up ${
-              color == 'Light' ? 'lightGradient' : 'darkGradient'
-            }`}
+            className={`round__bg__up ${color == 'Light' ? 'lightGradient' : 'darkGradient'
+              }`}
           ></div>
         </div>
       </div>

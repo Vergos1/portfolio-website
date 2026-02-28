@@ -21,7 +21,7 @@ export const AppHeaderWrapper = ({
   className,
   mode = 'hamburger',
 }: AppHeaderWrapperProps) => {
-  const color = useAppSelector((state) => state.fullPage.selectedBackground)
+  const color = useAppSelector(state => state.fullPage.selectedBackground)
   const logoAnimationTl = useRef<gsap.core.Timeline | null>(null);
 
   useEffect(() => {

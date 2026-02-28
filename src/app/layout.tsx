@@ -71,9 +71,9 @@ export default function RootLayout({
       </head>
 
       <body className={`${satoshi.variable} ${syne.variable}`}>
+        <Cursor />
         <StoreProvider>
           <SmoothProvider>
-            <Cursor />
             <AppHeader />
             <AppHeaderWrapper />
             <TransitionProvider>{children}</TransitionProvider>
