@@ -1,6 +1,7 @@
 import { isDesktop } from '@shared-utils';
 import { Magentic } from './magentic';
 import { ReactNode } from 'react';
+import gsap from 'gsap';
 
 type ButtonProps = {
   href: string;

@@ -15,16 +15,16 @@ interface MagenticProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
   scrambleParams?:
-    | {
-        text: string;
-        chars?: string;
-        speed?: number;
-      }
-    | {
-        text: string;
-        chars?: string;
-        speed?: number;
-      }[];
+  | {
+    text: string;
+    chars?: string;
+    speed?: number;
+  }
+  | {
+    text: string;
+    chars?: string;
+    speed?: number;
+  }[];
 }
 export const Magentic = memo(
   ({
@@ -116,10 +116,10 @@ export const Magentic = memo(
         ref={magnet}
         className={cn(
           'flex justify-center *:pointer-events-none ' +
-            (hoverUnderline
-              ? ' before:absolute before:bottom-0 before:h-0.5 before:w-0 before:origin-center before:bg-[#a3a3a3] before:transition-all before:duration-300 hover:before:w-full '
-              : ' ') +
-            className,
+          (hoverUnderline
+            ? ' before:absolute before:bottom-0 before:h-0.5 before:w-0 before:origin-center before:bg-[#a3a3a3] before:transition-all before:duration-300 hover:before:w-full '
+            : ' ') +
+          className,
         )}
         onMouseEnter={() => {
           if (scrambleParams) {
@@ -154,3 +154,5 @@ export const Magentic = memo(
     );
   },
 );
+
+Magentic.displayName = 'Magentic';
