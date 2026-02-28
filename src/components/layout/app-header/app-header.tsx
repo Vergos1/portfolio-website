@@ -10,6 +10,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useRef } from 'react';
 import { AppFooter } from '@components-layout';
 import { AppHeaderWrapper } from './app-header-wrapper';
+import "@styles/slide-animation.css"
 
 export const AppHeader = () => {
   const dispatch = useAppDispatch();
