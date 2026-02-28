@@ -1,7 +1,5 @@
-import { Button, Magentic, Typography } from '@components-ui';
+import { Button, Typography } from '@components-ui';
 import { links } from '@shared-config';
-import { isDesktop } from '@shared-utils';
-import { gsap } from 'gsap';
 import 'swiper/css';
 
 export const AboutWrapper = () => {
