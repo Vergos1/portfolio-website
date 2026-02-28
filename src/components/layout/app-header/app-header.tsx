@@ -12,6 +12,22 @@ import { AppFooter } from '@components-layout';
 import { AppHeaderWrapper } from './app-header-wrapper';
 import "@styles/slide-animation.css"
 
+const headerData = [
+  {
+    name: 'Home',
+    href: links.home,
+  },
+
+  {
+    name: 'Work',
+    href: links.work,
+  },
+  {
+    name: 'Contact',
+    href: links.email,
+  },
+];
+
 export const AppHeader = () => {
   const dispatch = useAppDispatch();
   const router = useTransitionRouter();
@@ -82,21 +98,8 @@ export const AppHeader = () => {
     }
   }, [isMenuOpen]);
 
-  const headerData = [
-    {
-      name: 'Home',
-      href: links.home,
-    },
 
-    {
-      name: 'Work',
-      href: links.work,
-    },
-    {
-      name: 'Contact',
-      href: links.email,
-    },
-  ];
+
   return (
     <div
       id="headerNavigation"

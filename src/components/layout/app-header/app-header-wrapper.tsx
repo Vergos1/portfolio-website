@@ -15,11 +15,23 @@ type AppHeaderWrapperProps = {
   mode?: 'hamburger' | 'cross';
 };
 
+
+
 export const AppHeaderWrapper = ({ className, mode = 'hamburger' }: AppHeaderWrapperProps) => {
   const dispatch = useAppDispatch();
-  const color = useAppSelector(state => state.fullPage.selectedBackground);
+  const sectionColor = useAppSelector(state => state.fullPage.selectedBackground);
+  const menuColor = useAppSelector(state => state.menu.color);
   const headerRef = useRef<HTMLElement>(null);
   const logoAnimationTl = useRef<gsap.core.Timeline | null>(null);
+
+  const getHeaderColor = (): 'Light' | 'Dark' => {
+    if (mode === 'cross') {
+      return menuColor === 'Light' ? 'Dark' : 'Light';
+    }
+    return sectionColor;
+  };
+
+  const color = getHeaderColor();
 
   useGSAP(() => {
     logoAnimationTl.current = gsap
