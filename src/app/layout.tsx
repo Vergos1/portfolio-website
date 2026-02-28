@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 
 import '@styles/globals.css';
 import '@styles/layout.css';
+import '@styles/animation.css';
 import { gsap } from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
 import { SmoothProvider, StoreProvider, TransitionProvider } from '@components-providers';

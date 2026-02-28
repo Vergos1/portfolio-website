@@ -1,0 +1,33 @@
+.scrambleText {
+    display: inline-block;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.magnetic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    will-change: transform;
+}
+
+.shapka {
+    display: inline-block;
+    will-change: transform;
+}
+
+@media only screen and (max-width: 768px) {
+    .rounded__div {
+        height: 10vh;
+    }
+}
+
+.mask {
+    --mask: linear-gradient(90deg,
+            hsla(0, 0%, 100%) 0%,
+            hsla(0, 0%, 100%, 0.7) 100%);
+
+    -webkit-mask-image: var(--mask);
+    mask-image: var(--mask);
+}
