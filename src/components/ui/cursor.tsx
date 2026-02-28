@@ -1,6 +1,7 @@
 'use client';
 import { gsap } from 'gsap';
 import { useEffect } from 'react';
+import "@styles/cursor.css"
 
 export const Cursor = () => {
   useEffect(() => {

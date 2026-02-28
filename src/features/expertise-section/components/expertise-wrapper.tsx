@@ -70,7 +70,7 @@ export const ExpertiseWrapper = () => {
             brand and supports long-term growth.
           </Typography>
         </div>
-        <ol className="scrollable col-span-3 flex max-h-[calc(94px*2.5)] flex-col border-border lg:max-h-none">
+        <ol className="col-span-3 flex max-h-[calc(94px*2.5)] flex-col border-border lg:max-h-none">
           {expertiseList.map(({ id, title, description }) => {
             return (
               <li
