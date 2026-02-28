@@ -11,13 +11,13 @@ const BgImagesContainer = dynamic(() => import('./bg-images-container'), {
 });
 
 export const ContactsSection = () => {
-  const { subscribe } = useAppSelector(state => state.fullPage.third);
+  const selectedBackground = useAppSelector(state => state.fullPage.selectedBackground);
+  console.log("subscribe", selectedBackground);
   const bgImagesSharedRef = useRef<gsap.core.Tween | null>(null);
 
   return (
     <section className="section section__4 fourth darkGradient relative">
       <Bulge type="Light" />
-      <AppHeaderWrapper color="Light" />
 
       <Magentic
         href={links.email}

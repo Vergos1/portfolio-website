@@ -12,7 +12,6 @@ export const ExpertiseSection = () => {
       className="section section__3 third darkGradient items-center justify-center px-paddingX pb-10 pt-paddingY text-colorDark"
     >
       <Bulge type="Light" />
-      <AppHeaderWrapper color="Light" />
       <ExpertiseWrapper />
     </section>
   );

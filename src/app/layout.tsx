@@ -7,6 +7,8 @@ import { CustomEase } from 'gsap/CustomEase';
 import { StoreProvider, TransitionProvider } from '@components-providers';
 import { GoogleAnalytics } from '@shared-lib';
 import { Syne } from 'next/font/google';
+import { AppHeader, AppHeaderWrapper } from '@components-layout';
+import { Cursor } from '@components-ui';
 
 gsap.registerPlugin(CustomEase);
 
@@ -68,9 +70,12 @@ export default function RootLayout({
       </head>
 
       <body className={`${satoshi.variable} ${syne.variable}`}>
-          <StoreProvider>
-            <TransitionProvider>{children}</TransitionProvider>
-          </StoreProvider>
+        <StoreProvider>
+          <Cursor />
+          <AppHeader />
+          <AppHeaderWrapper />
+          <TransitionProvider>{children}</TransitionProvider>
+        </StoreProvider>
       </body>
     </html>
   );

@@ -7,7 +7,9 @@ import { CustomEase } from 'gsap/CustomEase';
 import { animateRounded, animateText } from '@shared-lib';
 import { gsap } from 'gsap';
 import { useAppDispatch } from '@shared-hooks';
-import { splineSceneVisibility, setActiveSlide } from '@shared-store/states';
+import { splineSceneVisibility, setActiveSlide, setHeaderBackground, Anchor, Direction } from '@shared-store/states';
+
+
 
 const opts: fullpageOptions = {
   autoScrolling: true,
@@ -38,7 +40,10 @@ export const FullPageProvider = ({
   const dispatch = useAppDispatch();
 
   const onLeave = (_: Item, destination: Item, direction: string) => {
-    dispatch(setActiveSlide([destination.anchor as any, direction]));
+    const anchor = destination.anchor as string;
+
+    dispatch(setActiveSlide([anchor as Anchor, direction as Direction]));
+    dispatch(setHeaderBackground(anchor as Anchor));
 
     // It will patch border that comes when we snap by include dark gradient class on body that has higher specfitcy than light gradient
     if (destination.anchor == 'second' || destination.anchor == 'fourth') {

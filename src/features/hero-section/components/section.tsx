@@ -14,7 +14,6 @@ export const HeroSection = () => {
       className="section section__1 darkGradient first relative z-0 px-paddingX text-colorLight"
     >
       <Bulge type="Light" />
-      <AppHeaderWrapper color="Light" />
       <HeroWrapper />
     </section>
   );

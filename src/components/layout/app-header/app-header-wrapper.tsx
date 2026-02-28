@@ -1,6 +1,6 @@
 'use client';
 import { links } from '@shared-config';
-import { useAppDispatch } from '@shared-hooks';
+import { useAppDispatch, useAppSelector } from '@shared-hooks';
 import { cn } from '@shared-lib';
 import { toggleMenu } from '@shared-store/states';
 import '@styles/header.css';
@@ -13,16 +13,15 @@ import { SvgLogo } from './svg-logo';
 const ease = CustomEase.create('custom', 'M0,0 C0.52,0.01 0.16,1 1,1 ');
 
 type AppHeaderWrapperProps = {
-  color: 'Dark' | 'Light';
   className?: string;
   mode?: 'hamburger' | 'cross';
 };
 
 export const AppHeaderWrapper = ({
-  color,
   className,
   mode = 'hamburger',
 }: AppHeaderWrapperProps) => {
+  const color = useAppSelector((state) => state.fullPage.selectedBackground)
   const logoAnimationTl = useRef<gsap.core.Timeline | null>(null);
 
   useEffect(() => {
