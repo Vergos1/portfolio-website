@@ -4,8 +4,8 @@ import '@styles/index.css';
 
 export default async function HomePage() {
   return (
-    <FullPageProvider>
-      <AppMain />
-    </FullPageProvider>
+    // <FullPageProvider>
+    <AppMain />
+    // </FullPageProvider>
   );
 }

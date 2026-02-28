@@ -4,7 +4,7 @@ import localFont from 'next/font/local';
 import '@styles/globals.css';
 import { gsap } from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
-import { StoreProvider, TransitionProvider } from '@components-providers';
+import { SmoothProvider, StoreProvider, TransitionProvider } from '@components-providers';
 import { GoogleAnalytics } from '@shared-lib';
 import { Syne } from 'next/font/google';
 import { AppHeader, AppHeaderWrapper } from '@components-layout';
@@ -71,10 +71,12 @@ export default function RootLayout({
 
       <body className={`${satoshi.variable} ${syne.variable}`}>
         <StoreProvider>
-          <Cursor />
-          <AppHeader />
-          <AppHeaderWrapper />
-          <TransitionProvider>{children}</TransitionProvider>
+          <SmoothProvider>
+            <Cursor />
+            <AppHeader />
+            <AppHeaderWrapper />
+            <TransitionProvider>{children}</TransitionProvider>
+          </SmoothProvider>
         </StoreProvider>
       </body>
     </html>
