@@ -1,16 +1,10 @@
 import { Button, Typography } from '@components-ui';
 import { links } from '@shared-config';
 import 'swiper/css';
+import { useAboutAnimation } from '../hooks';
 
 export const AboutWrapper = () => {
-  const principles = [
-    'Work should fit into our lives, not the other way around.',
-    'The transformative power of a global workforce is undeniable.',
-    '21st‑century skills and knowledge work are essential for progress.',
-    'Everyone should have equal access to opportunity.',
-    'It should be easier to be an entrepreneur.',
-    'Remote work and freelancing should build prosperity.',
-  ];
+  useAboutAnimation();
 
   return (
     <main className="flex h-full w-full max-w-maxWidth grow flex-col justify-center text-[5.8vw] md:text-[clamp(20px,_1vw_+_14px,_32px)]">
