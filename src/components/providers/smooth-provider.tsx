@@ -2,9 +2,9 @@
 import { smoothConfig } from '@shared-config';
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollSmoother, ScrollTrigger } from "gsap/all";
+import { CustomEase, ScrollSmoother, ScrollTrigger } from "gsap/all";
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, useGSAP);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, CustomEase, useGSAP);
 
 export const SmoothProvider = ({
     children,

@@ -4,15 +4,11 @@ import localFont from 'next/font/local';
 import '@styles/globals.css';
 import '@styles/layout.css';
 import '@styles/animation.css';
-import { gsap } from 'gsap';
-import { CustomEase } from 'gsap/CustomEase';
 import { SmoothProvider, StoreProvider, TransitionProvider } from '@components-providers';
 import { GoogleAnalytics } from '@shared-lib';
-import { Syne } from 'next/font/google';
+import { Syne, Oswald } from 'next/font/google';
 import { AppHeader, AppHeaderWrapper } from '@components-layout';
 import { Cursor } from '@components-ui';
-
-gsap.registerPlugin(CustomEase);
 
 const satoshi = localFont({
   src: '../assets/fonts/satoshi/Satoshi-Variable.woff2',
@@ -24,6 +20,12 @@ const syne = Syne({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-syne',
+});
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-oswald",
 });
 
 export const metadata: Metadata = {
@@ -71,7 +73,7 @@ export default function RootLayout({
         <GoogleAnalytics />
       </head>
 
-      <body className={`${satoshi.variable} ${syne.variable}`}>
+      <body className={`${satoshi.variable} ${syne.variable} ${oswald.variable}`}>
         <Cursor />
         <StoreProvider>
           <AppHeader />

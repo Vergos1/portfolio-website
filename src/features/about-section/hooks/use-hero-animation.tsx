@@ -16,7 +16,7 @@ export const useAboutAnimation = () => {
         });
 
         gsap.to(firstMsgSplit.words, {
-            color: "#faeade",
+            color: "var(--colorLight)",
             ease: "power1.in",
             stagger: 1,
             scrollTrigger: {
@@ -27,7 +27,7 @@ export const useAboutAnimation = () => {
             },
         });
         gsap.to(secMsgSplit.words, {
-            color: "#faeade",
+            color: "var(--colorLight)",
             ease: "power1.in",
             stagger: 1,
             scrollTrigger: {
@@ -36,19 +36,6 @@ export const useAboutAnimation = () => {
                 end: "bottom center",
                 scrub: true,
             },
-        });
-
-        const revealTl = gsap.timeline({
-            delay: 1,
-            scrollTrigger: {
-                trigger: ".msg-text-scroll",
-                start: "top 60%",
-            },
-        });
-        revealTl.to(".msg-text-scroll", {
-            duration: 1,
-            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-            ease: "circ.inOut",
         });
 
         const paragraphTl = gsap.timeline({

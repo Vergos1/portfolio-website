@@ -9,7 +9,8 @@
     --foreground: 222.2 84% 4.9%;
 
     /* customs */
-    --colorPrimary: rgb(253, 60, 0);
+    --colorPrimary: #E8FF00;
+    --colorBlock: rgba(255, 255, 255, 0.06);
     --colorDark: #0e0d0c;
     --colorSecondaryDark: #404040;
     --colorSecondaryHalfDark: #1a1a1a;
@@ -145,16 +146,16 @@
 
     .hero-content {
       @apply relative z-10 w-full h-full flex flex-col 2xl:justify-center items-center translate-y-10 2xl:pt-0 md:pt-32 pt-24;
-
+     
       .hero-title {
-        @apply 2xl:text-8xl md:text-6xl text-4xl font-bold uppercase leading-[9vw] tracking-[-.35vw] mb-5;
+        @apply 2xl:text-8xl md:text-6xl text-4xl font-extrabold uppercase leading-[9vw] tracking-[.2vw] mb-5;
       }
 
       .hero-text-scroll {
-        @apply rounded-3xl mb-8 border-[2px] border-dashed;
+        @apply rounded-3xl mb-8 border-[2px] border-dashed bg-colorBlock text-colorLight;
 
         h2 {
-          @apply text-colorSecondaryLight uppercase 2xl:text-8xl md:text-6xl text-4xl font-bold leading-[9vw] tracking-[-.35vw] 2xl:px-[1.2vw] px-3 2xl:py-0 py-3;
+          @apply uppercase 2xl:text-8xl md:text-6xl text-4xl font-bold leading-[9vw] tracking-[.2vw] 2xl:px-[1.2vw] px-3 pb-5 pt-3;
         }
       }
 
@@ -165,31 +166,27 @@
   }
 
   .message-content {
-    @apply bg-colorSecondaryHalfDark text-colorLight min-h-dvh overflow-hidden flex justify-center items-center relative z-20;
+    @apply text-colorLight min-h-dvh overflow-hidden flex justify-center items-center relative z-20;
 
     .msg-wrapper {
-      @apply 2xl:text-[8.5rem] md:text-8xl text-5xl font-bold uppercase leading-[9vw] tracking-[-.35vw] flex flex-col justify-center items-center md:gap-24 gap-14;
+      @apply 2xl:text-8xl md:text-6xl text-4xl font-extrabold uppercase leading-[9vw] tracking-[.2vw] flex flex-col justify-center items-center md:gap-24 gap-14;
 
       h1:first-of-type {
-        @apply 2xl:max-w-4xl md:max-w-2xl max-w-xs text-center text-colorLight/10;
+        @apply 2xl:max-w-4xl md:max-w-2xl font-extrabold max-w-xs text-center text-colorSecondaryDark;
       }
 
       h1:last-of-type {
-        @apply 2xl:max-w-7xl md:max-w-4xl max-w-xs text-center text-colorLight/10;
+        @apply 2xl:max-w-7xl md:max-w-4xl font-extrabold max-w-xs text-center text-colorSecondaryDark;
       }
     }
 
     p {
-      @apply text-center font-satoshi;
+      @apply text-center font-satoshi font-normal;
     }
 
     h1,
     h2 {
       @apply leading-none;
-    }
-
-    .msg-text-scroll {
-      @apply rotate-[3deg] 2xl:translate-y-5 -translate-y-5 absolute z-10 border-[.5vw] border-colorSecondaryHalfDark;
     }
   }
 

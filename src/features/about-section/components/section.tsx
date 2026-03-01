@@ -8,9 +8,9 @@ export const AboutSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="section section__2 second lightGradient items-center justify-center px-paddingX pb-10 pt-paddingY text-colorDark"
+      className="section section__2 second darkGradient items-center justify-center px-paddingX pb-10 pt-paddingY text-colorDark"
     >
-      <Bulge type="Dark" />
+      <Bulge type="Light" />
       <AboutWrapper />
     </section>
   );
