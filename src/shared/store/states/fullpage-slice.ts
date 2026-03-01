@@ -25,7 +25,7 @@ const anchorBackground: Record<Anchor, 'Light' | 'Dark'> = {
   first: 'Light',
   second: 'Light',
   third: 'Light',
-  fourth: 'Light',
+  fourth: 'Dark',
   fifth: 'Light',
   sixth: 'Light',
 };

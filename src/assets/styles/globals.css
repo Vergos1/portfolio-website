@@ -191,7 +191,7 @@
   }
 
   .flavor-section {
-    @apply min-h-dvh ;
+    @apply min-h-dvh p-10;
 
     .flavor-text-scroll {
       @apply rotate-[-3deg] md:translate-y-5 border-[.5vw] border-colorDark absolute z-10;
