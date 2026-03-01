@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.49",
+    "@gsap/react": "^2.1.2",
     "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-avatar": "^1.1.11",
     "@radix-ui/react-label": "^2.1.8",
@@ -31,6 +32,7 @@
     "react-dom": "^19.2.4",
     "react-hook-form": "^7.71.1",
     "react-redux": "^9.2.0",
+    "react-responsive": "^10.0.1",
     "resend": "^6.9.2",
     "split-type": "^0.3.4",
     "swiper": "^12.1.2",

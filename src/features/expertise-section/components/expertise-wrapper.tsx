@@ -2,6 +2,8 @@ import { Typography, Magentic } from '@components-ui';
 import Image from 'next/image';
 import ShapeIcon from '@public/svg/titles-shape.svg';
 import 'swiper/css';
+import { Activity, useState } from 'react';
+import { Plus } from 'lucide-react';
 
 const expertiseList = [
   {
@@ -31,18 +33,82 @@ const expertiseList = [
 ];
 
 export const ExpertiseWrapper = () => {
+  const [openId, setOpenId] = useState<number | null>(0);
+
+  const toggleAccordion = (id: number) => {
+    setOpenId(prev => (prev === id ? null : id));
+  };
+
   return (
-    <div className="flex h-full w-full max-w-maxWidth grow flex-col justify-center text-[5.8vw] text-colorLight md:text-[clamp(20px,_1vw_+_14px,_32px)]">
-      <div className="anime flex flex-col gap-12">
-        <Typography
-          as="h2"
-          variant="h2"
-          className="flex gap-2"
-          shape={<Image src={ShapeIcon} alt="Shape" className="w-6 md:w-10" />}
-        >
-          Expertise
-        </Typography>
-        <div className="grid max-h-full grid-cols-1 grid-rows-1 gap-4 sm:grid-cols-2 sm:grid-rows-2 sm:gap-16">
+    <div className="flex min-h-screen w-full max-w-maxWidth grow flex-col justify-center text-[5.8vw] text-colorLight md:text-[clamp(20px,_1vw_+_14px,_32px)]">
+      <div className="anime flex flex-col gap-4 lg:grid lg:grid-cols-7 lg:gap-28">
+        <div className="col-span-4">
+          <Typography
+            as="h2"
+            variant="h2"
+            className="mb-4"
+            shape={
+              <Image
+                src={ShapeIcon}
+                alt="Shape"
+                className="float-start mr-2 mt-1 h-max w-6 md:w-10"
+              />
+            }
+          >
+            My Approach to Building Digital Products
+          </Typography>
+          <Typography
+            as="p"
+            variant="body"
+            className="text-colorSecondaryLight"
+          >
+            I build digital products in a structured, transparent, and
+            result-oriented way. From architecture planning to final deployment,
+            every stage is clearly defined and executed step by step. My goal is
+            not just to deliver a website, but to create a scalable,
+            maintainable, and high-performing product that truly represents your
+            brand and supports long-term growth.
+          </Typography>
+        </div>
+        <ol className="col-span-3 flex max-h-[calc(94px*2.5)] flex-col border-border lg:max-h-none">
+          {expertiseList.map(({ id, title, description }) => {
+            return (
+              <li
+                key={id}
+                className="border-b border-border px-3 py-8 last:border-b-0 md:px-5 md:py-12"
+              >
+                <button
+                  className="mb-4 flex w-full items-center justify-between gap-6"
+                  onClick={() => toggleAccordion(id)}
+                >
+                  <Typography
+                    as="span"
+                    variant="h3"
+                    className="tracking-[0.1em]"
+                  >
+                    0{id}
+                  </Typography>
+                  <div className="flex flex-1 items-center justify-between">
+                    <Typography as="h3" variant="h3">
+                      {title}
+                    </Typography>
+                    <Plus width={20} />
+                  </div>
+                </button>
+                <Activity mode={openId === id ? 'visible' : 'hidden'}>
+                  <Typography
+                    as="p"
+                    variant="body"
+                    className="text-colorSecondaryLight"
+                  >
+                    {description}
+                  </Typography>
+                </Activity>
+              </li>
+            );
+          })}
+        </ol>
+        {/* <div className="grid max-h-full grid-cols-1 grid-rows-1 gap-4 sm:grid-cols-2 sm:grid-rows-2 sm:gap-16">
           {expertiseList.map(({ id, title, description }) => (
             <Magentic key={id} className="flex flex-col gap-1">
               <Typography as="h3" variant="h3">
@@ -57,7 +123,7 @@ export const ExpertiseWrapper = () => {
               </Typography>
             </Magentic>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

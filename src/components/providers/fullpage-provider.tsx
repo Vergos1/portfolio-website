@@ -7,11 +7,14 @@ import { CustomEase } from 'gsap/CustomEase';
 import { animateRounded, animateText } from '@shared-lib';
 import { gsap } from 'gsap';
 import { useAppDispatch } from '@shared-hooks';
-import { splineSceneVisibility, setActiveSlide } from '@shared-store/states';
+import { splineSceneVisibility, setActiveSlide, setHeaderBackground, Anchor, Direction } from '@shared-store/states';
+
+
 
 const opts: fullpageOptions = {
   autoScrolling: true,
   scrollOverflow: false,
+  normalScrollElements: '.scrollable',
   navigationPosition: 'left',
   scrollingSpeed: 1300,
   scrollHorizontally: false,
@@ -32,12 +35,14 @@ export const FullPageProvider = ({
   const about = useRef<gsap.core.Timeline | null>(null);
   const textAnimSection2Down = useRef<gsap.core.Tween | null>(null);
   const videoElement = useRef<HTMLVideoElement | null>(null);
-  const workHeading = useRef<gsap.core.Tween | null>(null);
 
   const dispatch = useAppDispatch();
 
   const onLeave = (_: Item, destination: Item, direction: string) => {
-    dispatch(setActiveSlide([destination.anchor as any, direction]));
+    const anchor = destination.anchor as string;
+
+    dispatch(setActiveSlide([anchor as Anchor, direction as Direction]));
+    dispatch(setHeaderBackground(anchor as Anchor));
 
     // It will patch border that comes when we snap by include dark gradient class on body that has higher specfitcy than light gradient
     if (destination.anchor == 'second' || destination.anchor == 'fourth') {
@@ -138,28 +143,6 @@ export const FullPageProvider = ({
         },
         '-=0.9',
       );
-
-    workHeading.current = gsap.fromTo(
-      '.work_heading',
-      {
-        rotate: 15,
-        // opacity: 0,
-        scaleY: 1.5,
-      },
-      {
-        // opacity: 0,
-        rotate: 0,
-        scaleY: 1,
-        opacity: 1,
-        delay: 0.7,
-        duration: 1.3,
-        // scaleY: 1.5,
-        // paused: true,
-        // delay: 0.25,
-        // stagger: 0.12,
-        ease: CustomEase.create('custom', 'M0,0,C0.5,0,0,1,1,1'),
-      },
-    );
 
     videoElement.current = document.querySelector('#video') as HTMLVideoElement;
 

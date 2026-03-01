@@ -1,3 +1,5 @@
+import "@styles/slide-animation.css"
+
 type BulgeProps = {
   type: 'Dark' | 'Light';
 };

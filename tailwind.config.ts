@@ -12,15 +12,15 @@ const config: Config = {
   theme: {
     container: {
       center: true,
-      padding: '2rem',
       screens: {
-        '2xl': '1400px',
+        '2xl': '1800px',
       },
     },
     extend: {
       fontFamily: {
         satoshi: ['var(--font-satoshi)', 'sans-serif'],
         syne: ['var(--font-syne)', 'sans-serif'],
+        oswald: ['var(--font-oswald)', 'sans-serif'],
       },
       spacing: {
         paddingX: 'var(--paddingX)',
@@ -35,6 +35,7 @@ const config: Config = {
         colorLight: 'var(--colorLight)',
         colorSecondaryLight: 'var(--colorSecondaryLight)',
         colorSecondaryHalfLight: 'var(--colorSecondaryHalfLight)',
+        colorBlock: "var(--colorBlock)",
         border: 'hsl(var(--border))',
         borderLight: 'hsl(var(--borderLight))',
         input: 'hsl(var(--input))',
@@ -42,7 +43,7 @@ const config: Config = {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         primary: {
-          DEFAULT: 'hsl(var(--primary))',
+          DEFAULT: 'hsl(var(--colorPrimary))',
           foreground: 'hsl(var(--primary-foreground))',
         },
         secondary: {

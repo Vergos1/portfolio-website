@@ -1,89 +1,77 @@
 'use client';
 
-import { gsap } from 'gsap';
-import { useLayoutEffect, useRef } from 'react';
-import SplitType from 'split-type';
-import { HeroButton } from './hero-button';
-import HeroImage from '@public/image/hero-image.jpg';
-import Image from 'next/image';
-import { Magentic, Typography } from '@components-ui';
+import { Button, Magentic } from '@components-ui';
+import { useMediaQuery } from "react-responsive";
+import { useHeroAnimation } from '../hooks';
 
 export const HeroWrapper = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  useHeroAnimation();
 
-  useLayoutEffect(() => {
-    const tl = gsap.timeline({ delay: 0.3 });
-    gsap.set(containerRef.current, { autoAlpha: 1 });
+  const isMobile = useMediaQuery({
+    query: "(max-width: 768px)",
+  });
 
-    if (!containerRef.current) return;
-
-    const titleChars = new SplitType('.hero-text-anim', {
-      types: 'chars',
-      tagName: 'span',
-    }).chars;
-
-    const imageElements =
-      containerRef.current.querySelectorAll<HTMLDivElement>('.hero-image-anim');
-
-    gsap.from(titleChars, {
-      opacity: 0,
-      scale: 0.5,
-      rotation: 15,
-      y: 30,
-      stagger: 0.08,
-      duration: 0.7,
-      ease: 'back.out(1.7)',
-    });
-
-    tl.fromTo(
-      imageElements,
-      { scale: 0, opacity: 0 },
-      {
-        scale: 1,
-        opacity: 1,
-        stagger: 0.04,
-        duration: 0.5,
-        ease: 'power4.out',
-      },
-    );
-
-    tl.fromTo(
-      '.hero-button-anim',
-      { scale: 0.8, opacity: 0 },
-      { scale: 1, opacity: 1, duration: 1, ease: 'back.out(1.7)' },
-      '<+0.2',
-    );
-
-    return () => {
-      tl.kill();
-    };
-  }, []);
+  const isTablet = useMediaQuery({
+    query: "(max-width: 1024px)",
+  });
 
   return (
-    <div
-      ref={containerRef}
-      style={{ visibility: 'hidden' }}
-      className="section1__wrapper relative z-20 flex h-full w-full flex-col items-center justify-center text-colorLight"
-    >
-      <div className="flex max-w-full flex-col items-center justify-center text-center">
-        <span className="mb-4 flex items-center text-2xl font-light uppercase text-colorSecondaryLight md:text-6xl">
-          Hey, I’m
-          <Magentic>
-            <Image
-              src={HeroImage}
-              alt="alt"
-              className="ml-4 mr-4 h-10 w-10 overflow-hidden rounded-full bg-center md:h-12 md:w-12"
+    <div className="hero-container">
+      {isTablet ? (
+        <>
+          {isMobile && (
+            <img
+              src="/images/hero-bg.png"
+              alt='hero'
+              className="absolute bottom-40 size-full object-cover"
             />
-          </Magentic>
-          Igor
-        </span>
-        <Typography as="h1" variant="h1" className="hero-text-anim text-pretty">
-          I create interactive <br /> web & mobile solutions.
-        </Typography>
-      </div>
+          )}
+          <img
+            src="/images/hero-img.png"
+            alt='hero'
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 object-auto"
+          />
+        </>
+      ) : (
+        <div className="absolute inset-0">
+          <video
+            src="/video/video-5.mp4"
+            autoPlay
+            muted
+            playsInline
+            loop
+            className="absolute inset-0 w-full h-full object-cover opacity-70"
+          />
 
-      <div className="hero-button-anim absolute bottom-10 left-0 right-0 w-full">
-        <HeroButton />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
+
+          <div className="absolute inset-0 grain-overlay" />
+        </div>
+      )}
+      <div className="hero-content opacity-0">
+        <div className="overflow-hidden">
+          <h1 className="hero-title">frontend & fullstack</h1>
+        </div>
+        <Magentic>
+          <div
+            style={{
+              clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
+            }}
+            className="hero-text-scroll"
+          >
+
+            <div className="hero-subtitle">
+              <h2>developer</h2>
+            </div>
+          </div>
+        </Magentic>
+        <h2 className='hero-description'>
+          I build fast, clean, and memorable digital experiences — from pixel-perfect interfaces to scalable fullstack solutions.
+        </h2>
+
+        <Button textColor='colorDark' className="md:mt-16 mt-10 bg-colorLight" params="View all Work" href="#" >
+          View all Work
+        </Button>
       </div>
     </div>
   );

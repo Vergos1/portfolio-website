@@ -14,6 +14,8 @@ export const TransitionProvider = ({
   const firstLayer = useRef<HTMLDivElement | null>(null);
   const secondLayer = useRef<HTMLDivElement | null>(null);
 
+  const isDark = color === 'Dark';
+
   return (
     <TransitionRouter
       auto={true}
@@ -27,8 +29,8 @@ export const TransitionProvider = ({
             { y: '100%' },
             {
               y: 0,
-              duration: 0.5, // Увеличена продолжительность
-              ease: 'power2.inOut', // Более плавная функция сглаживания
+              duration: 0.5,
+              ease: 'power2.inOut',
             },
           )
           .fromTo(
@@ -38,7 +40,7 @@ export const TransitionProvider = ({
             },
             {
               y: 0,
-              duration: 0.2, // Увеличена продолжительность
+              duration: 0.2,
               ease: 'power2.inOut',
             },
             '<50%',
@@ -56,7 +58,7 @@ export const TransitionProvider = ({
             { y: 0 },
             {
               y: '-100%',
-              duration: 1, // Увеличена продолжительность
+              duration: 1,
               ease: 'power2.inOut',
             },
           )
@@ -65,7 +67,7 @@ export const TransitionProvider = ({
             { y: 0 },
             {
               y: '-100%',
-              duration: 1, // Увеличена продолжительность
+              duration: 1,
               ease: 'power2.inOut',
             },
             '<50%',
@@ -82,13 +84,13 @@ export const TransitionProvider = ({
       <div
         ref={firstLayer}
         className={`fixed inset-0 z-50 translate-y-full ${
-          color === 'Dark' ? 'bg-colorDark' : 'bg-colorLight'
+         isDark ? 'bg-colorDark' : 'bg-colorLight'
         }`}
       />
       <div
         ref={secondLayer}
         className={`fixed inset-0 z-50 translate-y-full ${
-          color === 'Dark' ? 'bg-colorLight' : 'bg-colorDark'
+          isDark ? 'bg-colorLight' : 'bg-colorDark'
         }`}
       />
     </TransitionRouter>

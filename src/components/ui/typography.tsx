@@ -5,7 +5,7 @@ type Variant = 'h1' | 'h2' | 'h3' | 'body';
 
 type TypographyProps<T extends ElementType> = {
   as?: T;
-  variant: Variant;
+  variant?: Variant;
   children: ReactNode;
   className?: string;
   shape?: ReactNode;
