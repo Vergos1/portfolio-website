@@ -169,7 +169,7 @@
     @apply text-colorLight min-h-dvh overflow-hidden flex justify-center items-center relative z-20;
 
     .msg-wrapper {
-      @apply 2xl:text-8xl md:text-6xl text-4xl font-extrabold uppercase leading-[9vw] tracking-[.2vw] flex flex-col justify-center items-center md:gap-24 gap-14;
+      @apply 2xl:text-8xl md:text-6xl text-4xl font-extrabold uppercase leading-[9vw] tracking-[.2vw] flex flex-col justify-center items-center gap-8;
 
       h1:first-of-type {
         @apply 2xl:max-w-4xl md:max-w-2xl font-extrabold max-w-xs text-center text-colorSecondaryDark;

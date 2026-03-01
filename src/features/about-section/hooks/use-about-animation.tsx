@@ -21,18 +21,19 @@ export const useAboutAnimation = () => {
             stagger: 1,
             scrollTrigger: {
                 trigger: ".message-content",
-                start: "top center",
-                end: "30% center",
+                start: "top 90%",
+                end: "20% center",
                 scrub: true,
             },
         });
+
         gsap.to(secMsgSplit.words, {
             color: "var(--colorLight)",
             ease: "power1.in",
             stagger: 1,
             scrollTrigger: {
                 trigger: ".second-message",
-                start: "top center",
+                start: "top 80%",
                 end: "bottom center",
                 scrub: true,
             },
@@ -41,7 +42,7 @@ export const useAboutAnimation = () => {
         const paragraphTl = gsap.timeline({
             scrollTrigger: {
                 trigger: ".message-content p",
-                start: "top center",
+                start: "top 115%",
             },
         });
         paragraphTl.from(paragraphSplit.words, {
@@ -52,4 +53,4 @@ export const useAboutAnimation = () => {
             stagger: 0.01,
         });
     });
-}
+};
