@@ -14,6 +14,7 @@ export const SmoothProvider = ({
     useGSAP(() => {
         ScrollSmoother.create(smoothConfig);
     });
+
     return (
         <div id="smooth-wrapper">
             <div id="smooth-content">

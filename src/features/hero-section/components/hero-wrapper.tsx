@@ -21,13 +21,13 @@ export const HeroWrapper = () => {
         <>
           {isMobile && (
             <img
-              src="/images/hero-bg.png"
+              src=""
               alt='hero'
               className="absolute bottom-40 size-full object-cover"
             />
           )}
           <img
-            src="/images/hero-img.png"
+            src=""
             alt='hero'
             className="absolute bottom-0 left-1/2 -translate-x-1/2 object-auto"
           />
