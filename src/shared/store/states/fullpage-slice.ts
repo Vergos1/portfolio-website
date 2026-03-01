@@ -24,8 +24,8 @@ interface FullpageState {
 const anchorBackground: Record<Anchor, 'Light' | 'Dark'> = {
   first: 'Light',
   second: 'Light',
-  third: 'Light',
-  fourth: 'Dark',
+  third: 'Dark',
+  fourth: 'Light',
   fifth: 'Light',
   sixth: 'Light',
 };
