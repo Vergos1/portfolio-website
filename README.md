@@ -1,6 +1,6 @@
 # Portfolio v3
 
-Personal portfolio website built with Next.js, GSAP, Spline 3D and Fullpage.js.
+Personal portfolio website built with Next.js, GSAP, Spline 3D and smooth scrolling.
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)
@@ -9,7 +9,7 @@ Personal portfolio website built with Next.js, GSAP, Spline 3D and Fullpage.js.
 
 ## About
 
-Third version of my personal portfolio website. Built with Next.js App Router, GSAP scroll animations, Spline 3D scenes, Lottie animations and Fullpage.js for section-based scrolling.
+Third version of my personal portfolio website. Built with Next.js App Router, GSAP scroll animations with ScrollTrigger and ScrollSmoother, Spline 3D scenes, Lottie animations and horizontal scrolling sections.
 
 🔗 **Live:** [portfolio-v3-coral-theta.vercel.app](https://portfolio-v3-coral-theta.vercel.app/)
 
@@ -21,16 +21,18 @@ Third version of my personal portfolio website. Built with Next.js App Router, G
 
 ## Features
 
-- **GSAP** — scroll-based animations with ScrollSmoother
+- **GSAP** — scroll-based animations with ScrollSmoother and ScrollTrigger
 - **Spline 3D** — interactive 3D scenes via `@splinetool/r3f-spline`
-- **Fullpage.js** — section-based full-page scrolling
+- **Smooth scrolling** — GSAP ScrollSmoother for buttery scroll experience
+- **Horizontal scrolling** — GSAP-powered horizontal sections
 - **Lottie** — animated illustrations via `lottie-react`
 - **Swiper** — project carousel
 - **Split Type** — text split animations
 - **Contact form** — React Hook Form + Zod validation + Resend email
 - **Redux Toolkit** — global state management
 - **Page transitions** — smooth transitions via `next-transition-router`
-- **Radix UI** — accessible UI primitives
+- **Shadcn UI + Radix UI** — accessible UI component system
+- **Lucide React** — icon set
 - **Responsive** — adaptive layout via `react-responsive`
 
 ## Tech Stack
@@ -39,19 +41,19 @@ Third version of my personal portfolio website. Built with Next.js App Router, G
 |---|---|
 | Next.js | React framework |
 | TypeScript | Type safety |
-| GSAP + @gsap/react | Scroll animations |
+| GSAP + ScrollTrigger | Scroll animations and triggers |
+| GSAP ScrollSmoother | Smooth and horizontal scrolling |
 | Spline | 3D scenes |
-| Fullpage.js | Section scrolling |
 | Lottie | Animated illustrations |
 | Swiper | Carousel |
 | Tailwind CSS | Styling |
 | Shadcn UI | UI component system |
 | Radix UI | Accessible UI primitives |
+| Lucide React | Icons |
 | Redux Toolkit | State management |
 | React Hook Form + Zod | Contact form validation |
 | Resend | Email sending |
 | Split Type | Text animations |
-| Lucide React | Icons |
 | next-transition-router | Page transitions |
 
 ## Getting Started
